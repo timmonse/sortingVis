@@ -13,6 +13,7 @@
     color: white;
     text-decoration: none;
     font-size: 17px;
+    font-family: Bahnschrift;
 }
 
 /* Navbar links on mouse-over */
@@ -45,7 +46,8 @@
 
 /* Menu Grid Typical Item */
 .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
+    /*Uncomment for debugging*/
+    /* background-color: rgba(255, 255, 255, 0.8); */
     padding: 20px;
     font-size: 30px;
     text-align: center;
@@ -67,8 +69,8 @@
 /* Fancy Main Button Below */
 
 .draw-border {
-    box-shadow: inset 0 0 0 4px #58afd1;
-    color: #58afd1;
+    box-shadow: inset 0 0 0 4px #000000;
+    color: #000000;
     -webkit-transition: color 0.25s 0.0833333333s;
     transition: color 0.25s 0.0833333333s;
     position: relative;
@@ -93,10 +95,10 @@
     border-right-width: 4px;
 }
 .draw-border:hover {
-    color: #ffe593;
+    color: #af001f;
 }
 .draw-border:hover::before, .draw-border:hover::after {
-    border-color: #ffe593;
+    border-color: #af001f;
     -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
     transition: border-color 0s, width 0.25s, height 0.25s;
     width: 100%;
@@ -116,12 +118,12 @@
     border: none;
     cursor: pointer;
     line-height: 1.5;
-    font: 700 1.2rem 'Roboto Slab', sans-serif;
+    font: 700 1.2rem 'Bahnschrift', sans-serif;
     padding: 1em 2em;
     letter-spacing: 0.05rem;
 }
 .btn:focus {
-    outline: 2px dotted #55d7dc;
+    outline: 2px dotted #4c5052;
 }
 
 /* Fancy Main Button Above */
