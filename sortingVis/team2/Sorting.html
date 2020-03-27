@@ -46,6 +46,25 @@
         <br>
         <button id="start_btn">Start</button>
         <br>
-        <canvas width="800px" height="600px" id="main_canvas"></canvas>
+        <br>
+        <canvas width="800px" height="600px" style="border:1px solid #000000;" id="main_canvas"></canvas>
+
+    <script>
+        var arr = [Math.ceil(Math.random() * 50)];
+        for (var i = 1; i < document.getElementById("array_size").value; i++)
+        {
+            arr.push(Math.ceil(Math.random() * 50));
+        }
+
+        if (document.getElementById("initial_select").value != "Random")
+        {
+            arr.sort();
+
+            if (document.getElementById("initial_select").value != "Sorted")
+            {
+                arr.reverse();
+            }
+        }
+    </script>
     </body>
 </html>
