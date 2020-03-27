@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr;
+}
+
+.Title {
+  grid-column: 1/4;
+}
+
+.tools{
+  grid-column: 1/4;
+}
+.SortList {
+  grid-column: 1/2;
+}
+
+.sortVisual {
+  grid-column: 2/4;
+  height: 100px;
+}

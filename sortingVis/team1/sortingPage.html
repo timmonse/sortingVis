@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="resources/css/sortPage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="resources/js/sorts.js">
+
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title></title>
+</head>
+
+<body>
+
+  <div class="grid">
+    <div class="Title" style="background-color:#aaa;">
+      <img src="resources/images/sortingVis.png" alt="SortingVis Logo" width="100" height="100">
+      <i class="fa fa-play vertical-center" style="font-size:48px;float:right;vertical-align:middle;"></i>
+      <i class="fa fa-pause" style="font-size:48px;float:right;margin:10px;"></i>
+       <input type="range" min="1" max="100" value="50" class="slider" id="myRange" style="margin:10px;float:right;">
+    </div>
+    <div class="tools" style="background-color:#ddd">
+      <h1>tools</h1>
+    </div>
+    <div class="SortList" id="SortList">
+    </div>
+    <div class="sortVisual" style="background-color:#bbb;">
+      <p>sortVisual</p>
+    </div>
+
+  </div>
+
+  <script>
+    sorts.addSorts();
+  </script>
+</body>
+
+</html>
