@@ -34,35 +34,30 @@
     }
 }
 
+/* Logo centering */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
 /* Menu Grid Template */
 .grid-container {
     display: grid;
-    grid-gap: 50px;
+    grid-gap: 1px;
     grid-template-columns: auto auto auto;
     /*Uncomment for debugging*/
     /* background-color: #2196F3; */
-    padding: 10px;
+    padding: 5px;
 }
 
 /* Menu Grid Typical Item */
 .grid-item {
     /*Uncomment for debugging*/
     /* background-color: rgba(255, 255, 255, 0.8); */
-    padding: 20px;
+    padding: 10px;
     font-size: 30px;
-    text-align: center;
-}
-
-/* Button properties */
-.block {
-    display: block;
-    width: 100%;
-    border: none;
-    background-color: #000000;
-    color: white;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
     text-align: center;
 }
 
@@ -127,3 +122,86 @@
 }
 
 /* Fancy Main Button Above */
+
+/* Settings Button Below */
+
+.button {
+    display: inline-flex;
+    height: 40px;
+    width: 150px;
+    border: 2px solid #000000;
+    /*margin: 20px 20px 20px 20px;*/
+    color: #000000;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font: 700 1.2rem 'Bahnschrift', sans-serif;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+
+#button-settings {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#button-settings a {
+    position: relative;
+    transition: all .45s ease-Out;
+}
+
+#underline-settings {
+    width: 100%;
+    height: 2.5px;
+    margin-top: 15px;
+    align-self: flex-end;
+    left: -200px;
+    background: #af001f;
+    position: absolute;
+    transition: all .3s ease-Out;
+    bottom: 0;
+}
+
+#button-settings:hover #underline-settings {
+    left: 0;
+}
+
+/* Settings Button Above */
+
+/* About Button Below */
+
+#button-about {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#button-about a {
+    position: relative;
+    transition: all .45s ease-Out;
+}
+
+#underline-about {
+    width: 100%;
+    height: 2.5px;
+    margin-top: 15px;
+    align-self: flex-end;
+    left: -200px;
+    background: #af001f;
+    position: absolute;
+    transition: all .3s ease-Out;
+    bottom: 0;
+}
+
+#button-about:hover #underline-about {
+    left: 0;
+}

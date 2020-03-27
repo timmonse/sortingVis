@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2774e99-ef95-4600-83db-f77af6297804" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/team1/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/team1/masterSortingPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/team1/resources/css/about.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/team1/resources/css/masterSortingPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/team1/resources/css/settings.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/team1/resources/images/sortingVis.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/team1/settings.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/team1/mainMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/team1/mainMenu.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/team1/mainMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/team1/mainMenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/team1/resources/css/mainMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/team1/resources/css/mainMenu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/team1/sortingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/team1/sortingPage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,11 +41,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/team1/resources/images" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Classes\COMS319\g35\sortingVis\team1\resources\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Classes\COMS319\g35\sortingVis\team1" />
+      <recent name="D:\Classes\COMS319\g35\sortingVis\team1\resources\js" />
+      <recent name="D:\Classes\COMS319\g35\sortingVis\team1\resources\css" />
+      <recent name="D:\Classes\COMS319\g35\sortingVis\team1\resources" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -52,7 +66,7 @@
       <updated>1584896180793</updated>
       <workItem from="1584896768983" duration="4319000" />
       <workItem from="1585095087954" duration="656000" />
-      <workItem from="1585262359283" duration="2880000" />
+      <workItem from="1585262359283" duration="7073000" />
     </task>
     <servers />
   </component>
@@ -60,6 +74,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="533" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585271719338">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="533" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1585271719338" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1585095366911">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -68,6 +86,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="470" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584896185235" />
+    <state x="25" y="30" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585266533512">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="25" y="30" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1585266533512" />
     <state x="209" y="137" key="new project wizard" timestamp="1584909462582">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -3,33 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="mainMenu.css">
+    <link rel="stylesheet" href="resources/css/mainMenu.css">
 </head>
-<body>
+<body style="background-color:rgba(156,156,156,0.78);">
 
 <!-- Load an icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="navbar">
     <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
-    <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-    <a href="#"><i class="fa fa-fw fa-question"></i> About</a>
+    <a href="settings.html"><i class="fa fa-fw fa-gear"></i> Settings</a>
+    <a href="about.html"><i class="fa fa-fw fa-question"></i> About</a>
 </div>
 
+<img src="resources/images/sortingVis.png" alt="SortingVis Logo" class="center">
 
 <!-- Main grid to load page layout into -->
 <div class="grid-container">
-    <div class="grid-item">1</div>
-    <div class="grid-item">2</div>
-    <div class="grid-item">3</div>
-    <div class="grid-item">4</div>
+    <div class="grid-item"></div>
     <div class="grid-item">
-        <button class="btn draw-border">All Sorts</button>
+        <a href="masterSortingPage.html">
+            <button class="btn draw-border">VIEW SORTS</button>
+        </a>
     </div>
-    <div class="grid-item">6</div>
-    <div class="grid-item">7</div>
-    <div class="grid-item">8</div>
-    <div class="grid-item">9</div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item">
+        <div class="button" id="button-settings">
+            <div id="underline-settings"></div>
+            <a href="settings.html">Settings</a>
+        </div>
+    </div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item">
+        <div class="button" id="button-about">
+            <div id="underline-about"></div>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+    <div class="grid-item"></div>
 </div>
 
 
