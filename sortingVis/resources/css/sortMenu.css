@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the navigation bar */
+.navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+}
+
+/* Navbar links */
+.navbar a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: Bahnschrift;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+    background-color: #000;
+}
+/* Current/active navbar link */
+.active {
+    background-color: #af001f;
+}
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
+    }
+}
+
+/*styling for the sorts display*/
+.sort-list-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+
+/*need to delete sort classes*/
+.sort1 {
+    background-color: red;
+}
+.sort2 {
+    background-color: green;
+}
+.sort3 {
+    background-color: purple;
+}
+.sort4 {
+    background-color: white;
+}
+
+/* cards styling */
+.card {
+    background-color: red;
+    border-radius: 10px;
+    padding: 10px;
+    height: 400px;
+    display: inline-block;
+    margin: 10px;
+}
+
+.card-image {
+    width: 100%;
+    height: 90%;
+}
+.card-sort-name-font {
+    font-family: Bahnschrift;
+    margin-top: 5px;
+    font-size: 30px;
+    text-align: center;
+}
