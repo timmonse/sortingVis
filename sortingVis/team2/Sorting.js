@@ -76,6 +76,19 @@ function bubble_sort(arr) {
 	}
 }
 
+function insertion_sort(arr) {
+	for (var i = 1; i < arr.length; i++) {
+		var j = i - 1;
+		var temp = arr[i];
+		while (j >= 0 && arr[j] > temp) {
+		  arr[j + 1] = arr[j];
+		  j--;
+		}
+		arr[j+1] = temp;
+	}
+	showArray(arr);
+}
+
 function swap(arr, first_Index, second_Index){
     var temp = arr[first_Index];
     arr[first_Index] = arr[second_Index];
