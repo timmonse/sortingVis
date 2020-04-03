@@ -1,57 +1,83 @@
-function showArray(canvas, arr, color)
+function showArray(arr)
 {
     //initialize canvas
+    var fillColor = "#A9A9A9";
+    var canvas = document.getElementById("main_canvas");
     var context = canvas.getContext('2d');
     context.fillStyle = '#fff';
     context.fillRect(0, 0, canvas.width, canvas.height);
     context.strokeRect(0, 0, canvas.width, canvas.height);
 
-    //get min an max elements
-    var min = arr[0];
-    var max = arr[0];
-    for (var i = 1; i < arr.length; i++)
-    {
-        if (arr[i] > max)
-            max = arr[i];
-        else if (arr[i] < min)
-            min = arr[i];
-    }
+    var width = canvas.width / arr.length;
 
-    //find what size to draw graph elements
-    var spacing = canvas.width / (3*arr.length + 1);
-    var bar_width = spacing * 2;
-
-    //translate y values in the array relative to the canvas
-    function getY(y)
-    {
-        //getY(max) should = 0
-        //getY(min) should = canvas height
-        var a = canvas.height / (min - max);
-        var b = max * canvas.height / (max - min);
-        return a * y + b;
-    }
-
-    //draw zero line
-    var zero = convert_y(0);
-    context.beginPath();
-    context.moveTo(0, zero);
-    context.lineTo(canvas.width, zero);
-    context.stroke();
-
-    //draw array
-    var x = spacing;
     for (var i = 0; i < arr.length; i++)
     {
-        context.fillStyle = colors[i];
-        var y = convert_y(arr[i]);
-        if (arr[i] >= 0)
-        {
-            context.fillRect(x, y, bar_width, zero - y);
-        }
-        else
-        {
-            context.fillRect(x, zero, bar_width, y - zero);
-        }
-        x += spacing + bar_width;
+        drawBar(context, i * width, canvas.height - arr[i], width, arr[i], fillColor);
     }
+}
+
+function drawLine(ctx, startX, startY, endX, endY, color)
+{
+    ctx.save();
+    ctx.strokeStyle = color;
+    ctx.beginPath();
+    ctx.moveTo(startX, startY);
+    ctx.lineTo(endX, endY);
+    ctx.stroke();
+    ctx.restore();
+}
+
+function drawBar(ctx, upperLeftCornerX, upperLeftCornerY, width, height, color)
+{
+    ctx.save();
+    ctx.fillStyle = color;
+    ctx.fillRect(upperLeftCornerX, upperLeftCornerY, width, height);
+    ctx.restore();
+}
+
+function makeArray(numElements, isPreSorted)
+{
+    var result = [];
+
+    for (var i = 0; i < numElements; i++)
+        result.push(Math.floor(Math.random()*500));
+
+    if (isPreSorted)
+        result.sort();
+
+    return result;
+}
+
+function checkIfNeedsPivot()
+{
+    if (document.getElementById("algorithm_select").value === "QuickSort" || document.getElementById("algorithm_select").value === "MergeSort")
+    {
+        document.getElementById("pivot_label").style.visibility = "visible";
+        document.getElementById("pivot_select").style.visibility = "visible";
+    }
+    else
+    {
+        document.getElementById("pivot_label").style.visibility = "hidden";
+        document.getElementById("pivot_select").style.visibility = "hidden";
+    }
+}
+
+function bubble_sort(arr) {
+	var len = arr.length;
+	var i, j, stop;
+	
+	for(i = 0; i < len; i++) {
+		for(j = 0, stop = len - i; j < stop; j++) {
+			if(arr[j] > arr[j+1]) {
+				swap(arr, j, j+1);
+				showArray(arr); //Our problem here is that it executes too fast. We need to delay it. Im thinking this should be another story.
+			}
+		}
+	}
+}
+
+function swap(arr, first_Index, second_Index){
+    var temp = arr[first_Index];
+    arr[first_Index] = arr[second_Index];
+    arr[second_Index] = temp;
 }
