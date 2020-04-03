@@ -1,0 +1,78 @@
+<html> 
+    <head> 
+        <title>Sorting U</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+        <script src="sorting.js"></script> 
+<!--        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">-->
+<!--		<style>-->
+<!--            .sansserif {-->
+<!--                font-family: Arial, Helvetica, sans-serif;-->
+<!--            }-->
+<!--            body {-->
+<!--                border: 5px solid black;-->
+<!--                background-color: lightgrey;-->
+<!--                color: black;-->
+<!--            }-->
+<!--            canvas {-->
+<!--                border: 2px solid black;-->
+<!--            }-->
+<!--		</style>-->
+        <!-- Load an icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="resources/css/SortingU.css">
+    </head>
+
+    <div class="navbar">
+        <a href="mainMenu.html"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a class="active" href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+        <a href="about.html"><i class="fa fa-fw fa-question"></i> About</a>
+    </div>
+
+    <body> 
+		
+        <label class = "sansserif">Array Size</label> 
+        <input id="array_size" type="number" value="20"> 
+        <br> 
+        <label class = "sansserif">Algorithm</label> 
+        <select id="algorithm_select"> 
+            <option value="BubbleSort">Bubble sort</option> 
+            <option value="SelectionSort">Selection sort</option> 
+            <option value="InsertionSort">Insertion sort</option> 
+            <option value="QuickSort">Quicksort</option> 
+            <option value="HeapSort">Heapsort</option> 
+            <option value="MergeSort">Merge sort</option> 
+        </select> 
+        <br> 
+            <label class = "sansserif">Initial array</label> 
+            <select id="initial_select"> 
+                <option value="Random">Random</option> 
+                <option value="Sorted">Sorted</option> 
+                <option value="Reversed">Reversed</option> 
+            </select> 
+        <br>
+            <label class = "sansserif">Pivot choice</label> 
+            <select id="pivot_select"> 
+                <option value="Random">Random</option> 
+                <option value="First">First</option> 
+                <option value="Middle">Middle</option> 
+                <option value="Last">Last</option> 
+                <option value="Median3">Median of 3</option> 
+            </select> 
+        <br> 
+        <p class = "sansserif"> 
+            Comparisons are BLUE, 
+            <br> 
+            Swaps are RED, 
+            <br> 
+            Sorted elements are GREEN. 
+        </p> 
+        <button id="start_btn">Start</button> 
+        <br> 
+        <canvas width="800px" height="600px" id="main_canvas"></canvas>
+
+        <p style="font-family:Bahnschrift;">Sorting U</p>
+
+    </body> 
+</html> 
