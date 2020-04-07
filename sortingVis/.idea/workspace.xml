@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f7618a6-8d0a-49e6-8c02-6103d0094e20" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/images/newTile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/images/newTileTwo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainMenu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/css/mainMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/mainMenu.css" afterDir="false" />
@@ -21,15 +23,20 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/images" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Classes\COMS319\g35\sortingVis\resources\images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Classes\COMS319\g35\sortingVis\resources\images" />
       <recent name="D:\Classes\COMS319\g35\sortingVis\JUnitTesting\selenium" />
     </key>
   </component>
@@ -65,7 +72,7 @@
       <workItem from="1586034238183" duration="561000" />
       <workItem from="1586034965370" duration="735000" />
       <workItem from="1586042591182" duration="801000" />
-      <workItem from="1586288656434" duration="1586000" />
+      <workItem from="1586288656434" duration="3278000" />
     </task>
     <servers />
   </component>
