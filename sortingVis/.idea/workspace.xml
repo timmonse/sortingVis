@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f7618a6-8d0a-49e6-8c02-6103d0094e20" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/g35.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUnitTesting/JUnitTesting.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JUnitTesting/JUnitTesting.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUnitTesting/src/TestFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/JUnitTesting/src/TestFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainMenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/mainMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/mainMenu.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +24,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/JUnitTesting/selenium" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -63,7 +60,12 @@
       <option name="presentableId" value="Default" />
       <updated>1585942615191</updated>
       <workItem from="1585942616447" duration="26000" />
-      <workItem from="1585942652908" duration="566000" />
+      <workItem from="1585942652908" duration="3258000" />
+      <workItem from="1586033920750" duration="305000" />
+      <workItem from="1586034238183" duration="561000" />
+      <workItem from="1586034965370" duration="735000" />
+      <workItem from="1586042591182" duration="801000" />
+      <workItem from="1586288656434" duration="1586000" />
     </task>
     <servers />
   </component>
@@ -71,25 +73,33 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1585942697228">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1586043428466">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585942697228" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1585943255066">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586043428466" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1585967069488">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585943255066" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1585943255066">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585967069488" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1585967069488">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585943255066" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1585943255066">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585967069488" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1585967069488">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585943255066" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1585943255066">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585967069488" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1585967069488">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585943255066" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585967069488" />
+    <state x="277" y="55" key="SettingsEditor" timestamp="1586035435069">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586035435069" />
+    <state x="238" y="88" key="new project wizard" timestamp="1586043449539">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="238" y="88" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1586043449539" />
   </component>
 </project>

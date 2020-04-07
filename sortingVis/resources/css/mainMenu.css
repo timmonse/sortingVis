@@ -35,7 +35,10 @@
 }
 
 /* Logo centering */
-.center {
+.logo-center {
+    width: 150px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -109,7 +112,7 @@
 }
 
 .btn {
-    background: none;
+    background: whitesmoke;
     border: none;
     cursor: pointer;
     line-height: 1.5;
@@ -152,6 +155,7 @@ a {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    background: whitesmoke;
 }
 
 #button-settings a {
@@ -183,6 +187,7 @@ a {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    background: whitesmoke;
 }
 
 #button-about a {
