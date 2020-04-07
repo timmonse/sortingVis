@@ -3,6 +3,7 @@
     width: 100%;
     background-color: #555;
     overflow: auto;
+    opacity: 0.9;
 }
 
 /* Navbar links */
@@ -36,7 +37,8 @@
 
 /* Body formatting */
 .body{
-    background: url('../images/newTileThree.png');
+    /* The image used */
+    background-image: url("../images/newTileFour.png");
 }
 
 /* Logo centering */
@@ -125,6 +127,7 @@
 
 .btn {
     background: whitesmoke;
+    opacity: 0.8;
     border: none;
     cursor: pointer;
     line-height: 1.5;
@@ -168,6 +171,7 @@ a {
     overflow: hidden;
     cursor: pointer;
     background: whitesmoke;
+    opacity: 0.8;
 }
 
 #button-settings a {
@@ -200,6 +204,7 @@ a {
     overflow: hidden;
     cursor: pointer;
     background: whitesmoke;
+    opacity: 0.8;
 }
 
 #button-about a {

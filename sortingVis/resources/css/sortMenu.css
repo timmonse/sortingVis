@@ -28,6 +28,13 @@
 .navbar a:hover {
     background-color: #000;
 }
+
+/* Body formatting */
+.body{
+    /* The image used */
+    background-image: url("../images/newTileFour.png");
+}
+
 /* Current/active navbar link */
 .active {
     background-color: #af001f;

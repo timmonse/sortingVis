@@ -3,6 +3,7 @@
     width: 100%;
     background-color: #555;
     overflow: auto;
+    opacity: 0.9;
 }
 
 /* Navbar links */
@@ -34,6 +35,12 @@
     }
 }
 
+/* Body formatting */
+.body{
+    /* The image used */
+    background-image: url("../images/newTileFour.png");
+}
+
 /* Three columns side by side */
 .column {
     float: left;
@@ -42,13 +49,13 @@
     padding: 0 8px;
 }
 
-/* Display the columns below each other instead of side by side on small screens */
-@media screen and (max-width: 650px) {
-    .column {
-        width: 100%;
-        display: block;
-    }
-}
+/*!* Display the columns below each other instead of side by side on small screens *!*/
+/*@media screen and (max-width: 650px) {*/
+/*    .column {*/
+/*        width: 100%;*/
+/*        display: block;*/
+/*    }*/
+/*}*/
 
 /* Add some shadows to create a card effect */
 .card {
@@ -103,12 +110,12 @@
     padding: 0 8px;
 }
 
-@media screen and (max-width: 650px) {
-    .column {
-        width: 100%;
-        display: block;
-    }
-}
+/*@media screen and (max-width: 650px) {*/
+/*    .column {*/
+/*        width: 100%;*/
+/*        display: block;*/
+/*    }*/
+/*}*/
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
