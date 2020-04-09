@@ -113,15 +113,32 @@ function insertion_sort(arr) {
 		var temp = arr[i];
 		while (j >= 0 && arr[j] > temp) {
 		  arr[j + 1] = arr[j];
+		  showArray(arr);
 		  j--;
 		}
 		arr[j+1] = temp;
+        showArray(arr);
 	}
-	showArray(arr);
 }
 
 function selection_sort(arr) {
+    var len = arr.length
+    var min;
 
+    for (i=0; i < len; i++){
+        min = i;
+
+        for (j=i+1; j < len; j++){
+            if (arr[j] < arr[min]){
+                min = j;
+            }
+        }
+
+        if (i != min){
+            swap(arr, i, min);
+            showArray(arr);
+        }
+    }
 }
 
 function quick_sort(arr) {
