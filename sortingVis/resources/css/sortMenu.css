@@ -1,16 +1,18 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*}*/
+/* I dont think this is needed, it messes up the menu bar
+/* If needed, uncomment
+ */
 
 /* Style the navigation bar */
 .navbar {
     width: 100%;
     background-color: #555;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
+    overflow: auto;
+    opacity: 0.9;
 }
 
 /* Navbar links */
@@ -28,15 +30,24 @@
 .navbar a:hover {
     background-color: #000;
 }
+
 /* Current/active navbar link */
 .active {
     background-color: #af001f;
 }
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
 @media screen and (max-width: 500px) {
     .navbar a {
         float: none;
         display: block;
     }
+}
+
+/* Body formatting */
+.body{
+    /* The image used */
+    background-image: url("../images/newTileFour.png");
 }
 
 /*styling for the sorts display*/
@@ -85,10 +96,12 @@ a {
     letter-spacing: 1px;
 }
 
-.center {
+.logo-center {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 20%;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
 }
 

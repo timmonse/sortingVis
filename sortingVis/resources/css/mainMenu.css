@@ -3,6 +3,7 @@
     width: 100%;
     background-color: #555;
     overflow: auto;
+    opacity: 0.9;
 }
 
 /* Navbar links */
@@ -34,8 +35,17 @@
     }
 }
 
+/* Body formatting */
+.body{
+    /* The image used */
+    background-image: url("../images/newTileFour.png");
+}
+
 /* Logo centering */
-.center {
+.logo-center {
+    width: 150px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -70,6 +80,7 @@
     transition: color 0.25s 0.0833333333s;
     position: relative;
 }
+
 .draw-border::before, .draw-border::after {
     border: 0 solid transparent;
     box-sizing: border-box;
@@ -81,17 +92,21 @@
     bottom: 0;
     right: 0;
 }
+
 .draw-border::before {
     border-bottom-width: 4px;
     border-left-width: 4px;
 }
+
 .draw-border::after {
     border-top-width: 4px;
     border-right-width: 4px;
 }
+
 .draw-border:hover {
     color: #af001f;
 }
+
 .draw-border:hover::before, .draw-border:hover::after {
     border-color: #af001f;
     -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
@@ -99,17 +114,20 @@
     width: 100%;
     height: 100%;
 }
+
 .draw-border:hover::before {
     -webkit-transition-delay: 0s, 0s, 0.25s;
     transition-delay: 0s, 0s, 0.25s;
 }
+
 .draw-border:hover::after {
     -webkit-transition-delay: 0s, 0.25s, 0s;
     transition-delay: 0s, 0.25s, 0s;
 }
 
 .btn {
-    background: none;
+    background: whitesmoke;
+    opacity: 0.8;
     border: none;
     cursor: pointer;
     line-height: 1.5;
@@ -152,6 +170,8 @@ a {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    background: whitesmoke;
+    opacity: 0.8;
 }
 
 #button-settings a {
@@ -183,6 +203,8 @@ a {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    background: whitesmoke;
+    opacity: 0.8;
 }
 
 #button-about a {
