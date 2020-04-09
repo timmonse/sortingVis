@@ -19,7 +19,6 @@ function runSort()
         heap_sort(arr);
     else
         merge_sort(arr)
-
 }
 
 function showArray(arr)
