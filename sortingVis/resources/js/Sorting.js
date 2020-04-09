@@ -87,6 +87,16 @@ function checkIfNeedsPivot()
     }
 }
 
+function wait(ms)
+{
+    var d = new Date();
+    var d2 = null;
+    while(d2-d < ms)
+    {
+        d2 = new Date();
+    }
+}
+
 function swap(arr, first_Index, second_Index) {
     var temp = arr[first_Index];
     arr[first_Index] = arr[second_Index];
