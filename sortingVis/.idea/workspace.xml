@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f7618a6-8d0a-49e6-8c02-6103d0094e20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/images/newTileFour.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instructions.html" beforeDir="false" afterPath="$PROJECT_DIR$/instructions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainMenu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/Sorting.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/Sorting.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/about.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/instructions.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/instructions.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/mainMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/mainMenu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/settings.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sorting.html" beforeDir="false" afterPath="$PROJECT_DIR$/Sorting.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/css/sortMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/sortMenu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/newTileThree.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/newTileThree.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/settings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/images/newTileFour.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/images/newTileFour.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sortMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/sortMenu.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +75,8 @@
       <workItem from="1586034238183" duration="561000" />
       <workItem from="1586034965370" duration="735000" />
       <workItem from="1586042591182" duration="801000" />
-      <workItem from="1586288656434" duration="5831000" />
+      <workItem from="1586288656434" duration="6683000" />
+      <workItem from="1586462042541" duration="558000" />
     </task>
     <servers />
   </component>
