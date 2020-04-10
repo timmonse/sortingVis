@@ -3,16 +3,16 @@ var sorts = {
     Model: [
         {
             "name": "Bubble Sort",
+            "image": "https://i2.wp.com/abovethecrowd.com/wp-content/uploads/2014/01/bubbles-water-transparent-design.jpg?resize=1024%2C768",
+            "page": "sorting.html"
+        },
+        {
+            "name": "Selection Sort",
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Bubblesort-edited-color.svg/220px-Bubblesort-edited-color.svg.png",
             "page": "sorting.html"
         },
         {
-            "name": "Bubble Sort",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Bubblesort-edited-color.svg/220px-Bubblesort-edited-color.svg.png",
-            "page": "sorting.html"
-        },
-        {
-            "name": "Bubble Sort",
+            "name": "Merge Sort",
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Bubblesort-edited-color.svg/220px-Bubblesort-edited-color.svg.png",
             "page": "sorting.html"
         },
@@ -45,7 +45,4 @@ var sorts = {
         entry.appendChild(container);
         return entry;
     }
-
-
-
 };
