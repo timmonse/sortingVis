@@ -1,3 +1,26 @@
+function runSort()
+{
+    var size = parseInt(document.getElementById("array_size").value);
+    var sortElement = document.getElementById("initial_select");
+    var arr = makeArray(size, sortElement);
+    showArray(arr);
+
+    var whichSort = document.getElementById("algorithm_select").value;
+
+    if (whichSort == "BubbleSort")
+        bubble_sort(arr);
+    else if (whichSort == "SelectionSort")
+        selection_sort(arr);
+    else if (whichSort == "InsertionSort")
+        insertion_sort(arr);
+    else if (whichSort == "QuickSort")
+        quick_sort(arr);
+    else if (whichSort == "HeapSort")
+        heap_sort(arr);
+    else
+        merge_sort(arr)
+}
+
 function showArray(arr)
 {
     //initialize canvas
@@ -35,15 +58,17 @@ function drawBar(ctx, upperLeftCornerX, upperLeftCornerY, width, height, color)
     ctx.restore();
 }
 
-function makeArray(numElements, isPreSorted)
+function makeArray(numElements, inputElement)
 {
     var result = [];
 
     for (var i = 0; i < numElements; i++)
         result.push(Math.floor(Math.random()*500));
 
-    if (isPreSorted)
+    if (inputElement.value != "Random")
         result.sort();
+    if (inputElement.value == "Reversed")
+        result.reverse();
 
     return result;
 }
@@ -62,6 +87,22 @@ function checkIfNeedsPivot()
     }
 }
 
+function wait(ms)
+{
+    var d = new Date();
+    var d2 = null;
+    while(d2-d < ms)
+    {
+        d2 = new Date();
+    }
+}
+
+function swap(arr, first_Index, second_Index) {
+    var temp = arr[first_Index];
+    arr[first_Index] = arr[second_Index];
+    arr[second_Index] = temp;
+}
+
 function bubble_sort(arr) {
 	var len = arr.length;
 	var i, j, stop;
@@ -70,7 +111,7 @@ function bubble_sort(arr) {
 		for(j = 0, stop = len - i; j < stop; j++) {
 			if(arr[j] > arr[j+1]) {
 				swap(arr, j, j+1);
-				showArray(arr); //Our problem here is that it executes too fast. We need to delay it. Im thinking this should be another story.
+				showArray(arr);
 			}
 		}
 	}
@@ -82,15 +123,42 @@ function insertion_sort(arr) {
 		var temp = arr[i];
 		while (j >= 0 && arr[j] > temp) {
 		  arr[j + 1] = arr[j];
+		  showArray(arr);
 		  j--;
 		}
 		arr[j+1] = temp;
+        showArray(arr);
 	}
-	showArray(arr);
 }
 
-function swap(arr, first_Index, second_Index){
-    var temp = arr[first_Index];
-    arr[first_Index] = arr[second_Index];
-    arr[second_Index] = temp;
+function selection_sort(arr) {
+    var len = arr.length
+    var min;
+
+    for (i=0; i < len; i++){
+        min = i;
+
+        for (j=i+1; j < len; j++){
+            if (arr[j] < arr[min]){
+                min = j;
+            }
+        }
+
+        if (i != min){
+            swap(arr, i, min);
+            showArray(arr);
+        }
+    }
+}
+
+function quick_sort(arr) {
+
+}
+
+function heap_sort(arr) {
+
+}
+
+function merge_sort(arr) {
+
 }
