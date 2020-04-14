@@ -14,7 +14,7 @@ function runSort()
     else if (whichSort == "InsertionSort")
         insertion_sort(arr);
     else if (whichSort == "QuickSort")
-        quick_sort(arr);
+        quick_sort(arr, 0, size-1);
     else if (whichSort == "HeapSort")
         heap_sort(arr);
     else
@@ -151,8 +151,40 @@ function selection_sort(arr) {
     }
 }
 
-function quick_sort(arr) {
+function quick_sort(arr, left, right) {
+    if(left < right)
+    {
+        let pivot = partition(arr, left, right);
 
+        quick_sort(arr, left, pivot - 1);
+        quick_sort(arr, pivot + 1, right)
+    }
+}
+
+function partition(arr, leftIndex, rightIndex) {
+    var pivot = rightIndex;
+    var i = leftIndex - 1;
+    var j = leftIndex;
+
+    while (j < pivot)
+    {
+        if (arr[j] > arr[pivot])
+        {
+            j++
+        }
+
+        else
+        {
+            i++;
+            swap(arr, j, i);
+            j++
+        }
+    }
+
+    swap(arr, i + 1, pivot);
+    showArray(arr);
+
+    return i + 1
 }
 
 function heap_sort(arr) {
