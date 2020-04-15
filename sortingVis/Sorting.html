@@ -11,7 +11,7 @@
     </head>
 
 
-    <body>
+    <body class="body">
 
         <div class="navbar">
             <a href="mainMenu.html"><i class="fa fa-fw fa-home"></i> Home</a>
@@ -24,12 +24,14 @@
 
         <!-- Main grid to load page layout into -->
         <div class="grid-container">
-            <div class="grid-item1">
+            <div class="grid-item1 grid-normal">
                 <label>Array Size</label>
+                <br>
                 <input id="array_size" type="number" value="20">
             </div>
-            <div class="grid-item2">
+            <div class="grid-item2 grid-normal">
                 <label>Algorithm</label>
+                <br>
                 <select id="algorithm_select">
                     <option value="BubbleSort">Bubble sort</option>
                     <option value="SelectionSort">Selection sort</option>
@@ -39,16 +41,18 @@
                     <option value="MergeSort">Merge sort</option>
                 </select>
             </div>
-            <div class="grid-item3">
+            <div class="grid-item3 grid-normal">
                 <label>Initial array</label>
+                <br>
                 <select id="initial_select">
                     <option value="Random">Random</option>
                     <option value="Sorted">Sorted</option>
                     <option value="Reversed">Reversed</option>
                 </select>
             </div>
-            <div class="grid-item4">
+            <div class="grid-item4 grid-normal">
                 <label>Pivot choice</label>
+                <br>
                 <select id="pivot_select">
                     <option value="Random">Random</option>
                     <option value="First">First</option>
@@ -57,30 +61,20 @@
                     <option value="Median3">Median of 3</option>
                 </select>
             </div>
-            <div class="grid-item5">5</div>
-            <div class="grid-itemStart">
-                <button id="start_btn" onclick="runSort()">Start</button>
+            <div class="grid-hide"></div>
+            <div class="grid-itemStart grid-normal">
+                <button class="btn draw-border" id="start_btn" onclick="runSort()">START</button>
+                <p class="description-text">
+                    Add description here
+                </p>
             </div>
-            <div class="grid-item7">7</div>
-            <div class="grid-item8">5</div>
-            <div class="grid-itemCanvas">
+            <div class="grid-hide"></div>
+            <div class="grid-hide"></div>
+            <div class="grid-itemCanvas grid-normal">
                 <canvas width="800px" height="600px" style="border:1px solid #000000;" id="main_canvas"></canvas>
             </div>
-            <div class="grid-item10">7</div>
+            <div class="grid-hide"></div>
         </div>
-
-        <br>
-        <p>
-            Comparisons are blue,
-            <br>
-            swaps are red,
-            <br>
-            sorted elements are green.
-        </p>
-        <br>
-
-        <br>
-        <br>
 
     </body>
 </html>
