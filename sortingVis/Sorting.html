@@ -11,7 +11,7 @@
     </head>
 
 
-    <body>
+    <body class="body">
 
         <div class="navbar">
             <a href="mainMenu.html"><i class="fa fa-fw fa-home"></i> Home</a>
@@ -20,47 +20,62 @@
             <a href="instructions.html"><i class="fa fa-fw fa-file"></i> Instructions </a>
         </div>
 
-        <label>Array Size</label>
-        <input id="array_size" type="number" value="20">
         <br>
-        <label>Algorithm</label>
-        <select id="algorithm_select">
-            <option value="BubbleSort">Bubble sort</option>
-            <option value="SelectionSort">Selection sort</option>
-            <option value="InsertionSort">Insertion sort</option>
-            <option value="QuickSort">Quicksort</option>
-            <option value="HeapSort">Heapsort</option>
-            <option value="MergeSort">Merge sort</option>
-        </select>
-        <br>
-            <label>Initial array</label>
-            <select id="initial_select">
-                <option value="Random">Random</option>
-                <option value="Sorted">Sorted</option>
-                <option value="Reversed">Reversed</option>
-            </select>
-        <br>
-            <label>Pivot choice</label>
-            <select id="pivot_select">
-                <option value="Random">Random</option>
-                <option value="First">First</option>
-                <option value="Middle">Middle</option>
-                <option value="Last">Last</option>
-                <option value="Median3">Median of 3</option>
-            </select>
-        <br>
-        <p>
-            Comparisons are blue,
-            <br>
-            swaps are red,
-            <br>
-            sorted elements are green.
-        </p>
-        <br>
-        <button id="start_btn" onclick="runSort()">Start</button>
-        <br>
-        <br>
-        <canvas width="800px" height="600px" style="border:1px solid #000000;" id="main_canvas"></canvas>
+
+
+        <!-- Main grid to load page layout into -->
+        <div class="grid-container">
+            <div class="grid-leftColumn">
+                <div class="grid-container2">
+                    <div class="grid-item1 grid-normal">
+                        <label>Array Size</label>
+                        <br>
+                        <input id="array_size" type="number" value="20">
+                    </div>
+                    <div class="grid-item2 grid-normal">
+                        <label>Algorithm</label>
+                        <br>
+                        <select id="algorithm_select">
+                            <option value="BubbleSort">Bubble sort</option>
+                            <option value="SelectionSort">Selection sort</option>
+                            <option value="InsertionSort">Insertion sort</option>
+                            <option value="QuickSort">Quicksort</option>
+                            <option value="HeapSort">Heapsort</option>
+                            <option value="MergeSort">Merge sort</option>
+                        </select>
+                    </div>
+                    <div class="grid-item3 grid-normal">
+                        <label>Initial array</label>
+                        <br>
+                        <select id="initial_select">
+                            <option value="Random">Random</option>
+                            <option value="Sorted">Sorted</option>
+                            <option value="Reversed">Reversed</option>
+                        </select>
+                    </div>
+                    <div class="grid-item4 grid-normal">
+                        <label>Pivot choice</label>
+                        <br>
+                        <select id="pivot_select">
+                            <option value="Random">Random</option>
+                            <option value="First">First</option>
+                            <option value="Middle">Middle</option>
+                            <option value="Last">Last</option>
+                            <option value="Median3">Median of 3</option>
+                        </select>
+                    </div>
+                    <div class="grid-item5 grid-normal">
+                        <button class="btn draw-border" id="start_btn" onclick="runSort()">START</button>
+                    </div>
+                    <div class="grid-item6 grid-logo">
+                        <img src="resources/images/sortingVis_thin.png" alt="SortingVis Logo" class="img">
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item2 grid-itemCanvas">
+                <canvas width="800px" height="600px" style="border:1px solid #000000;" id="main_canvas"></canvas>
+            </div>
+        </div>
 
     </body>
 </html>
