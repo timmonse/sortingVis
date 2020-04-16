@@ -20,6 +20,31 @@ async function runSort() {
         await merge_sort(arr)
 }
 
+let speed = 0;
+window.onload = function() {
+    //your script here
+    let slider = document.getElementById("slider");
+
+    a = 0; //variable to be controlled
+
+    let dispDiv = document.getElementById("dispDiv");
+    dispDiv.innerHTML = "the js variable 'a' currently = " + a;
+
+    //function is called when slider value changes
+    slider.addEventListener("change", function() {
+        a = slider.value;
+        dispDiv.innerHTML = "the js variable 'a' currently = " + a;
+    })
+
+    //if you want it real-time, you can do this:
+    setInterval(function() {
+      a = slider.value;
+      dispDiv.innerHTML = "the js variable 'a' currently = " + a;
+    }, 100)
+}
+
+
+
 function showArray(arr)
 {
     //initialize canvas
@@ -95,15 +120,15 @@ function swap(arr, first_Index, second_Index) {
 }
 
 async function bubble_sort(arr) {
-    var len = arr.length;
-    var i, j, stop;
+    let len = arr.length;
+    let i, j, stop;
 
     for (i = 0; i < len; i++) {
         for (j = 0, stop = len - i; j < stop; j++) {
             if (arr[j] > arr[j + 1]) {
                 swap(arr, j, j + 1);
                 showArray(arr);
-                await sleep(10);
+                await sleep(a);
             }
         }
     }
