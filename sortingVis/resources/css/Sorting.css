@@ -165,6 +165,7 @@
     padding: 1em 2em;
     letter-spacing: 0.05rem;
 }
+
 .btn:focus {
     outline: 2px dotted #4c5052;
 }
@@ -178,8 +179,23 @@
     padding: 0px 0px 0px 0px;
 }
 
+.speed{
+    padding: 0px 0px 0px 0px;
+    font-size: 30px;
+    font-family: Bahnschrift;
+    display:inline-block;
+    margin-right:10px;
+}
+
 /*Slider*/
 #slider{
     direction: rtl;
+
+}
+
+/*Speed Data*/
+#dispDiv{
+    padding: 0px 0px 0px 0px;
+    display:inline-block;
 }
 

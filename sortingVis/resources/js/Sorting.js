@@ -1,20 +1,20 @@
 async function runSort() {
-    var size = parseInt(document.getElementById("array_size").value);
-    var sortElement = document.getElementById("initial_select");
-    var arr = makeArray(size, sortElement);
+    let size = parseInt(document.getElementById("array_size").value);
+    let sortElement = document.getElementById("initial_select");
+    let arr = makeArray(size, sortElement);
     showArray(arr);
 
-    var whichSort = document.getElementById("algorithm_select").value;
+    let whichSort = document.getElementById("algorithm_select").value;
 
-    if (whichSort == "BubbleSort")
+    if (whichSort === "BubbleSort")
         await bubble_sort(arr);
-    else if (whichSort == "SelectionSort")
+    else if (whichSort === "SelectionSort")
         await selection_sort(arr);
-    else if (whichSort == "InsertionSort")
+    else if (whichSort === "InsertionSort")
         await insertion_sort(arr);
-    else if (whichSort == "QuickSort")
+    else if (whichSort === "QuickSort")
         await quick_sort(arr, 0, size - 1);
-    else if (whichSort == "HeapSort")
+    else if (whichSort === "HeapSort")
         await heap_sort(arr);
     else
         await merge_sort(arr)
@@ -22,24 +22,17 @@ async function runSort() {
 
 let speed = 0;
 window.onload = function() {
-    //your script here
     let slider = document.getElementById("slider");
 
-    a = 0; //variable to be controlled
+    speed = 0; //variable to be controlled
 
     let dispDiv = document.getElementById("dispDiv");
-    dispDiv.innerHTML = "the js variable 'a' currently = " + a;
+    dispDiv.innerHTML = "" + (100 - speed);
 
-    //function is called when slider value changes
-    slider.addEventListener("change", function() {
-        a = slider.value;
-        dispDiv.innerHTML = "the js variable 'a' currently = " + a;
-    })
-
-    //if you want it real-time, you can do this:
+    //Real time interval adjustment
     setInterval(function() {
-      a = slider.value;
-      dispDiv.innerHTML = "the js variable 'a' currently = " + a;
+        speed = slider.value;
+      dispDiv.innerHTML = "" + (100 - speed);
     }, 100)
 }
 
@@ -48,16 +41,16 @@ window.onload = function() {
 function showArray(arr)
 {
     //initialize canvas
-    var fillColor = "#A9A9A9";
-    var canvas = document.getElementById("main_canvas");
-    var context = canvas.getContext('2d');
+    let fillColor = "#A9A9A9";
+    let canvas = document.getElementById("main_canvas");
+    let context = canvas.getContext('2d');
     context.fillStyle = '#fff';
     context.fillRect(0, 0, canvas.width, canvas.height);
     context.strokeRect(0, 0, canvas.width, canvas.height);
 
-    var width = canvas.width / arr.length;
+    let width = canvas.width / arr.length;
 
-    for (var i = 0; i < arr.length; i++)
+    for (let i = 0; i < arr.length; i++)
     {
         drawBar(context, i * width, canvas.height - arr[i], width, arr[i], fillColor);
     }
@@ -84,9 +77,9 @@ function drawBar(ctx, upperLeftCornerX, upperLeftCornerY, width, height, color)
 
 function makeArray(numElements, inputElement)
 {
-    var result = [];
+    let result = [];
 
-    for (var i = 0; i < numElements; i++)
+    for (let i = 0; i < numElements; i++)
         result.push(Math.floor(Math.random()*500));
 
     if (inputElement.value != "Random")
@@ -128,7 +121,7 @@ async function bubble_sort(arr) {
             if (arr[j] > arr[j + 1]) {
                 swap(arr, j, j + 1);
                 showArray(arr);
-                await sleep(a);
+                await sleep(speed);
             }
         }
     }
@@ -141,12 +134,12 @@ async function insertion_sort(arr) {
         while (j >= 0 && arr[j] > temp) {
             arr[j + 1] = arr[j];
             showArray(arr);
-            await sleep(10);
+            await sleep(speed);
             j--;
         }
         arr[j + 1] = temp;
         showArray(arr);
-        await sleep(10);
+        await sleep(speed);
     }
 }
 
@@ -166,7 +159,7 @@ async function selection_sort(arr) {
         if (i != min) {
             swap(arr, i, min);
             showArray(arr);
-            await sleep(10);
+            await sleep(speed);
         }
     }
 }
@@ -198,7 +191,7 @@ async function partition(arr, leftIndex, rightIndex) {
 
     swap(arr, i + 1, pivot);
     showArray(arr);
-    await sleep(10);
+    await sleep(speed);
 
     return i + 1
 }
