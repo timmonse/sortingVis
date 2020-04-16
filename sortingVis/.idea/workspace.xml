@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f7618a6-8d0a-49e6-8c02-6103d0094e20" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Sorting.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Sorting.js" afterDir="false" />
     </list>
@@ -9,6 +10,14 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -24,6 +33,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -75,6 +85,9 @@
       <workItem from="1586288656434" duration="6683000" />
       <workItem from="1586462042541" duration="894000" />
       <workItem from="1586805139637" duration="7208000" />
+      <workItem from="1586976530191" duration="310000" />
+      <workItem from="1586977194444" duration="854000" />
+      <workItem from="1587013051113" duration="1330000" />
     </task>
     <servers />
   </component>
