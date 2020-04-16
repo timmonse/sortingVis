@@ -44,21 +44,44 @@
 /*Grid details below*/
 
 .grid-container {
+     display: grid;
+     grid-template-columns: auto auto;
+     grid-gap: 20px;
+     /*background-color: #2196F3;*/
+     padding-left: 200px;
+     padding-right: 200px;
+     font-size: 17px;
+     font-family: Bahnschrift;
+ }
+
+.grid-container2 {
     display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 10px;
+    grid-template-columns: auto;
+    grid-gap: 0px;
     /*background-color: #2196F3;*/
-    padding: 10px;
+    padding: 0px 10px;
     font-size: 17px;
     font-family: Bahnschrift;
 }
 
+.grid-leftColumn {
+    background-color: rgba(255, 255, 255, .6);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    outline: 10px outset gray;
+}
+
 .grid-normal {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(100, 100, 100, 0.8);
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
     outline: 2px solid black;
+}
+
+.grid-logo {
+    padding: 0px 0px 0px 0px;
 }
 
 .grid-hide {
@@ -69,13 +92,11 @@
     outline: none;
 }
 
-.grid-itemStart {
-    grid-column: 2 / 4;
-}
-
 .grid-itemCanvas {
     grid-column: 2;
-    grid-row: 1 / span 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /*Grid details above*/
@@ -149,4 +170,11 @@
 }
 
 /* Fancy Start Button Above */
+
+/* Logo Details */
+.img {
+    max-width: 50%;
+    height: auto;
+    padding: 0px 0px 0px 0px;
+}
 
