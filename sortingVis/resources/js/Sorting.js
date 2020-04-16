@@ -20,6 +20,20 @@ async function runSort() {
         await merge_sort(arr)
 }
 
+function myFunction() {
+    let start = document.getElementById("start_btn");
+    let play = document.getElementById("play_btn");
+    let pause = document.getElementById("pause_btn");
+    if (start.style.visibility === "hidden") {
+        start.style.visibility = "visible";
+    } else {
+        start.style.visibility = "hidden";
+    }
+
+    play.style.visibility = "visible";
+    pause.style.visibility = "visible";
+}
+
 let speed = 0;
 window.onload = function() {
     let slider = document.getElementById("slider");
@@ -36,7 +50,22 @@ window.onload = function() {
     }, 100)
 }
 
+let isPause = 0;
 
+async function pauseSort(){
+    isPause = 1;
+}
+
+async function playSort(){
+    isPause = 0;
+}
+
+async function checkPause(){
+    while(isPause){
+        await sleep(speed);
+    }
+    await sleep(speed);
+}
 
 function showArray(arr)
 {
@@ -121,7 +150,7 @@ async function bubble_sort(arr) {
             if (arr[j] > arr[j + 1]) {
                 swap(arr, j, j + 1);
                 showArray(arr);
-                await sleep(speed);
+                await checkPause();
             }
         }
     }
@@ -134,12 +163,12 @@ async function insertion_sort(arr) {
         while (j >= 0 && arr[j] > temp) {
             arr[j + 1] = arr[j];
             showArray(arr);
-            await sleep(speed);
+            await checkPause();
             j--;
         }
         arr[j + 1] = temp;
         showArray(arr);
-        await sleep(speed);
+        await checkPause();
     }
 }
 
@@ -159,7 +188,7 @@ async function selection_sort(arr) {
         if (i != min) {
             swap(arr, i, min);
             showArray(arr);
-            await sleep(speed);
+            await checkPause();
         }
     }
 }
@@ -191,7 +220,7 @@ async function partition(arr, leftIndex, rightIndex) {
 
     swap(arr, i + 1, pivot);
     showArray(arr);
-    await sleep(speed);
+    await checkPause();
 
     return i + 1
 }
