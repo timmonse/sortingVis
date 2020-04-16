@@ -22,6 +22,7 @@
 
         <br>
 
+
         <!-- Main grid to load page layout into -->
         <div class="grid-container">
             <div class="grid-item1 grid-normal">
@@ -29,7 +30,10 @@
                 <br>
                 <input id="array_size" type="number" value="20">
             </div>
-            <div class="grid-item2 grid-normal">
+            <div class="grid-item2 grid-itemCanvas">
+                <canvas width="800px" height="600px" style="border:1px solid #000000;" id="main_canvas"></canvas>
+            </div>
+            <div class="grid-item3 grid-normal">
                 <label>Algorithm</label>
                 <br>
                 <select id="algorithm_select">
@@ -41,7 +45,7 @@
                     <option value="MergeSort">Merge sort</option>
                 </select>
             </div>
-            <div class="grid-item3 grid-normal">
+            <div class="grid-item4 grid-normal">
                 <label>Initial array</label>
                 <br>
                 <select id="initial_select">
@@ -50,7 +54,7 @@
                     <option value="Reversed">Reversed</option>
                 </select>
             </div>
-            <div class="grid-item4 grid-normal">
+            <div class="grid-item5 grid-normal">
                 <label>Pivot choice</label>
                 <br>
                 <select id="pivot_select">
@@ -61,20 +65,10 @@
                     <option value="Median3">Median of 3</option>
                 </select>
             </div>
-            <div class="grid-hide"></div>
-            <div class="grid-itemStart grid-normal">
+            <div class="grid-item6 grid-normal">
                 <button class="btn draw-border" id="start_btn" onclick="runSort()">START</button>
-                <p class="description-text">
-                    Add description here
-                </p>
             </div>
-            <div class="grid-hide"></div>
-            <div class="grid-hide"></div>
-            <div class="grid-itemCanvas grid-normal">
-                <canvas width="800px" height="600px" style="border:1px solid #000000;" id="main_canvas"></canvas>
-            </div>
-            <div class="grid-hide"></div>
         </div>
-
+    
     </body>
 </html>
