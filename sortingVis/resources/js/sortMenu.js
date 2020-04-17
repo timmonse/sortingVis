@@ -19,6 +19,25 @@ var sorts = {
             "page": "sorting.html",
             "value" : "MergeSort",
         },
+        {
+            "name": "Insertion Sort",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Bubblesort-edited-color.svg/220px-Bubblesort-edited-color.svg.png",
+            "page": "sorting.html",
+            "value" : "InsertionSort",
+        },
+        {
+            "name": "Quick Sort",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Bubblesort-edited-color.svg/220px-Bubblesort-edited-color.svg.png",
+            "page": "sorting.html",
+            "value" : "QuickSort",
+        },
+        {
+            "name": "Heap Sort",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Bubblesort-edited-color.svg/220px-Bubblesort-edited-color.svg.png",
+            "page": "sorting.html",
+            "value" : "HeapSort",
+        },
+
 
     ],
 

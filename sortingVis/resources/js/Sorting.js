@@ -238,7 +238,9 @@ function initView() {
     console.log(localStorage.getItem("type"));
     let selectSort = document.getElementById("algorithm_select");
     for(let i =0; i< selectSort.length; i++){
-        if(selectSort.options[i].value == localStorage.getItem("type"))
+        if(selectSort.options[i].value == localStorage.getItem("type")) {
             selectSort.selectedIndex = i;
+            break;
+        }
     }
 }
