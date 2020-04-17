@@ -67,16 +67,16 @@
 .grid-leftColumn {
     background-color: rgba(255, 255, 255, .6);
     text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
+    padding: 10px 0;
+    font-size: 20px;
     outline: 10px outset gray;
 }
 
 .grid-normal {
     background-color: rgba(100, 100, 100, 0.8);
     text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
+    padding: 10px 0;
+    font-size: 20px;
     outline: 2px solid black;
 }
 
@@ -165,6 +165,7 @@
     padding: 1em 2em;
     letter-spacing: 0.05rem;
 }
+
 .btn:focus {
     outline: 2px dotted #4c5052;
 }
@@ -178,5 +179,32 @@
     padding: 0px 0px 0px 0px;
 }
 
-/*TODO look into custom select*/
+.speed{
+    padding: 0px 0px 0px 0px;
+    font-size: 25px;
+    font-family: Bahnschrift;
+    display:inline-block;
+    margin-right:10px;
+}
+
+/*Slider*/
+#slider{
+    direction: rtl;
+
+}
+
+/*Speed Data*/
+#dispDiv{
+    padding: 0px 0px 0px 0px;
+    display:inline-block;
+}
+
+#play_btn{
+    display:inline-block;
+    margin-right:10px;
+}
+
+#pause_btn{
+    display:inline-block;
+}
 
