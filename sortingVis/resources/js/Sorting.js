@@ -287,6 +287,7 @@ function heapify(arr, length, i) {
 	}
 	
 	showArray(arr);
+    await checkPause();
 }
 
 //This is an iterative version of merge sort because it is hard to show the array after each step of recursion.
@@ -323,6 +324,7 @@ function merge_sort(arr) {
 	}
 
 	showArray(sorted);
+    await checkPause();
 }
 
 function initView() {
