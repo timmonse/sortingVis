@@ -4,17 +4,20 @@ var sorts = {
         {
             "name": "Bubble Sort",
             "image": "https://i2.wp.com/abovethecrowd.com/wp-content/uploads/2014/01/bubbles-water-transparent-design.jpg?resize=1024%2C768",
-            "page": "sorting.html"
+            "page": "sorting.html",
+            "value" : "BubbleSort",
         },
         {
             "name": "Selection Sort",
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Bubblesort-edited-color.svg/220px-Bubblesort-edited-color.svg.png",
-            "page": "sorting.html"
+            "page": "sorting.html",
+            "value" : "SelectionSort",
         },
         {
             "name": "Merge Sort",
             "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Bubblesort-edited-color.svg/220px-Bubblesort-edited-color.svg.png",
-            "page": "sorting.html"
+            "page": "sorting.html",
+            "value" : "MergeSort",
         },
 
     ],
@@ -33,6 +36,7 @@ var sorts = {
         entry.className = 'card draw-border';
 
         entry.addEventListener('click', function () {
+            localStorage.setItem("type", sort.value );
             window.document.location = sort.page;
         });
 
