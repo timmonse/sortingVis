@@ -57,7 +57,7 @@
 
 }
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 1000px){
     .sort-list-display{
         display: grid;
         grid-template-columns: 1fr 1fr;
