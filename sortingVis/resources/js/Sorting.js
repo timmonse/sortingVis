@@ -1,39 +1,85 @@
-function runSort()
-{
-    var size = parseInt(document.getElementById("array_size").value);
-    var sortElement = document.getElementById("initial_select");
-    var arr = makeArray(size, sortElement);
+async function runSort() {
+    let size = parseInt(document.getElementById("array_size").value);
+    let sortElement = document.getElementById("initial_select");
+    let arr = makeArray(size, sortElement);
     showArray(arr);
 
-    var whichSort = document.getElementById("algorithm_select").value;
+    let whichSort = document.getElementById("algorithm_select").value;
 
-    if (whichSort == "BubbleSort")
-        bubble_sort(arr);
-    else if (whichSort == "SelectionSort")
-        selection_sort(arr);
-    else if (whichSort == "InsertionSort")
-        insertion_sort(arr);
-    else if (whichSort == "QuickSort")
-        quick_sort(arr, 0, size-1);
-    else if (whichSort == "HeapSort")
-        heap_sort(arr);
+    if (whichSort === "BubbleSort")
+        await bubble_sort(arr);
+    else if (whichSort === "SelectionSort")
+        await selection_sort(arr);
+    else if (whichSort === "InsertionSort")
+        await insertion_sort(arr);
+    else if (whichSort === "QuickSort")
+        await quick_sort(arr, 0, size - 1);
+    else if (whichSort === "HeapSort")
+        await heap_sort(arr);
     else
-        merge_sort(arr)
+        await merge_sort(arr)
+}
+
+function myFunction() {
+    let start = document.getElementById("start_btn");
+    let play = document.getElementById("play_btn");
+    let pause = document.getElementById("pause_btn");
+    if (start.style.visibility === "hidden") {
+        start.style.visibility = "visible";
+    } else {
+        start.style.visibility = "hidden";
+    }
+
+    play.style.visibility = "visible";
+    pause.style.visibility = "visible";
+}
+
+let speed = 0;
+window.onload = function() {
+    let slider = document.getElementById("slider");
+
+    speed = 0; //variable to be controlled
+
+    let dispDiv = document.getElementById("dispDiv");
+    dispDiv.innerHTML = "" + (100 - speed);
+
+    //Real time interval adjustment
+    setInterval(function() {
+        speed = slider.value;
+      dispDiv.innerHTML = "" + (100 - speed);
+    }, 100)
+}
+
+let isPause = 0;
+
+async function pauseSort(){
+    isPause = 1;
+}
+
+async function playSort(){
+    isPause = 0;
+}
+
+async function checkPause(){
+    while(isPause){
+        await sleep(speed);
+    }
+    await sleep(speed);
 }
 
 function showArray(arr)
 {
     //initialize canvas
-    var fillColor = "#A9A9A9";
-    var canvas = document.getElementById("main_canvas");
-    var context = canvas.getContext('2d');
+    let fillColor = "#A9A9A9";
+    let canvas = document.getElementById("main_canvas");
+    let context = canvas.getContext('2d');
     context.fillStyle = '#fff';
     context.fillRect(0, 0, canvas.width, canvas.height);
     context.strokeRect(0, 0, canvas.width, canvas.height);
 
-    var width = canvas.width / arr.length;
+    let width = canvas.width / arr.length;
 
-    for (var i = 0; i < arr.length; i++)
+    for (let i = 0; i < arr.length; i++)
     {
         drawBar(context, i * width, canvas.height - arr[i], width, arr[i], fillColor);
     }
@@ -60,9 +106,9 @@ function drawBar(ctx, upperLeftCornerX, upperLeftCornerY, width, height, color)
 
 function makeArray(numElements, inputElement)
 {
-    var result = [];
+    let result = [];
 
-    for (var i = 0; i < numElements; i++)
+    for (let i = 0; i < numElements; i++)
         result.push(Math.floor(Math.random()*500));
 
     if (inputElement.value != "Random")
@@ -87,94 +133,85 @@ function checkIfNeedsPivot()
     }
 }
 
-function wait(ms)
-{
-    var d = new Date();
-    var d2 = null;
-    while(d2-d < ms)
-    {
-        d2 = new Date();
-    }
-}
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
 
 function swap(arr, first_Index, second_Index) {
-    var temp = arr[first_Index];
+    let temp = arr[first_Index];
     arr[first_Index] = arr[second_Index];
     arr[second_Index] = temp;
 }
 
-function bubble_sort(arr) {
-	var len = arr.length;
-	var i, j, stop;
-	
-	for(i = 0; i < len; i++) {
-		for(j = 0, stop = len - i; j < stop; j++) {
-			if(arr[j] > arr[j+1]) {
-				swap(arr, j, j+1);
-				showArray(arr);
-			}
-		}
-	}
+async function bubble_sort(arr) {
+    let len = arr.length;
+    let i, j, stop;
+
+    for (i = 0; i < len; i++) {
+        for (j = 0, stop = len - i; j < stop; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr, j, j + 1);
+                showArray(arr);
+                await checkPause();
+            }
+        }
+    }
 }
 
-function insertion_sort(arr) {
-	for (var i = 1; i < arr.length; i++) {
-		var j = i - 1;
-		var temp = arr[i];
-		while (j >= 0 && arr[j] > temp) {
-		  arr[j + 1] = arr[j];
-		  showArray(arr);
-		  j--;
-		}
-		arr[j+1] = temp;
+async function insertion_sort(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        let j = i - 1;
+        let temp = arr[i];
+        while (j >= 0 && arr[j] > temp) {
+            arr[j + 1] = arr[j];
+            showArray(arr);
+            await checkPause();
+            j--;
+        }
+        arr[j + 1] = temp;
         showArray(arr);
-	}
+        await checkPause();
+    }
 }
 
-function selection_sort(arr) {
-    var len = arr.length
-    var min;
+async function selection_sort(arr) {
+    let len = arr.length
+    let min;
 
-    for (i=0; i < len; i++){
+    for (i = 0; i < len; i++) {
         min = i;
 
-        for (j=i+1; j < len; j++){
-            if (arr[j] < arr[min]){
+        for (j = i + 1; j < len; j++) {
+            if (arr[j] < arr[min]) {
                 min = j;
             }
         }
 
-        if (i != min){
+        if (i != min) {
             swap(arr, i, min);
             showArray(arr);
+            await checkPause();
         }
     }
 }
 
-function quick_sort(arr, left, right) {
+async function quick_sort(arr, left, right) {
     if(left < right)
     {
-        let pivot = partition(arr, left, right);
+        let pivot = await partition(arr, left, right);
 
-        quick_sort(arr, left, pivot - 1);
-        quick_sort(arr, pivot + 1, right)
+        await quick_sort(arr, left, pivot - 1);
+        await quick_sort(arr, pivot + 1, right)
     }
 }
 
-function partition(arr, leftIndex, rightIndex) {
-    var pivot = rightIndex;
-    var i = leftIndex - 1;
-    var j = leftIndex;
+async function partition(arr, leftIndex, rightIndex) {
+    let pivot = rightIndex;
+    let i = leftIndex - 1;
+    let j = leftIndex;
 
-    while (j < pivot)
-    {
-        if (arr[j] > arr[pivot])
-        {
+    while (j < pivot) {
+        if (arr[j] > arr[pivot]) {
             j++
-        }
-
-        else
-        {
+        } else {
             i++;
             swap(arr, j, i);
             j++
@@ -183,6 +220,7 @@ function partition(arr, leftIndex, rightIndex) {
 
     swap(arr, i + 1, pivot);
     showArray(arr);
+    await checkPause();
 
     return i + 1
 }
@@ -261,4 +299,15 @@ function merge_sort(arr) {
 	}
 
 	showArray(sorted);
+}
+
+function initView() {
+    console.log(localStorage.getItem("type"));
+    let selectSort = document.getElementById("algorithm_select");
+    for(let i =0; i< selectSort.length; i++){
+        if(selectSort.options[i].value == localStorage.getItem("type")) {
+            selectSort.selectedIndex = i;
+            break;
+        }
+    }
 }
