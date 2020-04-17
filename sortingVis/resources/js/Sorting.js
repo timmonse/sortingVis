@@ -8,7 +8,7 @@ function runSort()
     var whichSort = document.getElementById("algorithm_select").value;
 
     if (whichSort == "BubbleSort")
-        bubble_sort(arr);
+        animatedBubbleSort(arr)
     else if (whichSort == "SelectionSort")
         selection_sort(arr);
     else if (whichSort == "InsertionSort")
@@ -101,6 +101,30 @@ function swap(arr, first_Index, second_Index) {
     var temp = arr[first_Index];
     arr[first_Index] = arr[second_Index];
     arr[second_Index] = temp;
+}
+
+function animatedBubbleSort(items) {
+    var i = 0;
+    var j = 0;
+    var length = items.length;
+
+    (function nextIteration() {
+        if (j >= length - i - 1) {
+            j = 0;
+            i++;
+        }
+        if (i < length) {
+            if (items[j] > items[j + 1]) {
+                swap(items, j, j+1);
+                showArray(items, j + 1);
+            }
+            j++;
+            setTimeout(nextIteration, 100);
+        }
+        else {
+            showArray(items);
+        }
+    })();
 }
 
 function bubble_sort(arr) {
