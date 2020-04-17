@@ -29,9 +29,13 @@ var sorts = {
     },
 
     createCard: function (sort) {
-        let entry = document.createElement('a');
+        let entry = document.createElement('div');
         entry.className = 'card draw-border';
-        entry.href = sort.page;
+
+        entry.addEventListener('click', function () {
+            window.document.location = sort.page;
+        });
+
         let image = document.createElement('img');
         image.src = sort.image;
         image.className = 'card-image';
