@@ -268,62 +268,62 @@ function heap_sort(arr) {
 	return arr;
 }
 
-function heapify(arr, length, i) {
-	let largest = i;
-	let left = i * 2 + 1;
-	let right = left + 1;
-	
-	if(left < length && arr[left] > arr[largest]) {
-		largest = left;
-	}
-	
-	if(right < length && arr[right] > arr[largest]) {
-		largest = right;
-	}
-	
-	if(largest != i) {
-		[arr[i], arr[largest]] = [arr[largest], arr[i]];
-		heapify(arr, length, largest);
-	}
-	
-	showArray(arr);
+async function heapify(arr, length, i) {
+    let largest = i;
+    let left = i * 2 + 1;
+    let right = left + 1;
+
+    if (left < length && arr[left] > arr[largest]) {
+        largest = left;
+    }
+
+    if (right < length && arr[right] > arr[largest]) {
+        largest = right;
+    }
+
+    if (largest != i) {
+        [arr[i], arr[largest]] = [arr[largest], arr[i]];
+        heapify(arr, length, largest);
+    }
+
+    showArray(arr);
     await checkPause();
 }
 
 //This is an iterative version of merge sort because it is hard to show the array after each step of recursion.
-function merge_sort(arr) {
-	var sorted = arr.slice(),
-		n = sorted.length,
-		buffer = new Array(n);
+async function merge_sort(arr) {
+    var sorted = arr.slice(),
+        n = sorted.length,
+        buffer = new Array(n);
 
-	for(var size = 1; size < n; size *= 2) {
-		for(var leftStart = 0; leftStart < n; leftStart += 2*size) {
-			var left = leftStart,
-			right = Math.min(left + size, n),
-			leftLimit = right,
-			rightLimit = Math.min(right + size, n),
-			i = left;
-		while(left < leftLimit && right < rightLimit) {
-			if(sorted[left] <= sorted[right]) {
-				buffer[i++] = sorted[left++];
-			} else {
-				buffer[i++] = sorted[right++];
-			}
-		}
-		while(left < leftLimit) {
-			buffer[i++] = sorted[left++];
-		}
-		while(right < rightLimit) {
-			buffer[i++] = sorted[right++];
-		}
+    for (var size = 1; size < n; size *= 2) {
+        for (var leftStart = 0; leftStart < n; leftStart += 2 * size) {
+            var left = leftStart,
+                right = Math.min(left + size, n),
+                leftLimit = right,
+                rightLimit = Math.min(right + size, n),
+                i = left;
+            while (left < leftLimit && right < rightLimit) {
+                if (sorted[left] <= sorted[right]) {
+                    buffer[i++] = sorted[left++];
+                } else {
+                    buffer[i++] = sorted[right++];
+                }
+            }
+            while (left < leftLimit) {
+                buffer[i++] = sorted[left++];
+            }
+            while (right < rightLimit) {
+                buffer[i++] = sorted[right++];
+            }
+        }
+
+        var temp = sorted,
+            sorted = buffer,
+            buffer = temp;
     }
-	
-    var temp = sorted,
-        sorted = buffer,
-        buffer = temp;
-	}
 
-	showArray(sorted);
+    showArray(sorted);
     await checkPause();
 }
 

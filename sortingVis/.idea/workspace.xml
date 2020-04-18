@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f7618a6-8d0a-49e6-8c02-6103d0094e20" name="Default Changelist" comment="" />
+    <list default="true" id="2f7618a6-8d0a-49e6-8c02-6103d0094e20" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/resources/js/Sorting.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Sorting.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
