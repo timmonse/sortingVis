@@ -117,7 +117,6 @@ function makeArray(numElements, inputElement)
     if (inputElement.value == "Random")
         result = shuffle(result);
     else if (inputElement.value == "Reversed")
-        result = shuffle(result);
         result.reverse();
 
 
