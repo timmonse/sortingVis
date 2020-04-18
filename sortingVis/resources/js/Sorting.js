@@ -107,16 +107,40 @@ function drawBar(ctx, upperLeftCornerX, upperLeftCornerY, width, height, color)
 function makeArray(numElements, inputElement)
 {
     let result = [];
+    let scaleFactor = 600/numElements;
 
     for (let i = 0; i < numElements; i++)
-        result.push(Math.floor(Math.random()*500));
+        result.push(i * scaleFactor);
 
-    if (inputElement.value != "Random")
-        result.sort();
-    if (inputElement.value == "Reversed")
+        //result.push(Math.floor(Math.random()*500));
+
+    if (inputElement.value == "Random")
+        result = shuffle(result);
+    else if (inputElement.value == "Reversed")
+        result = shuffle(result);
         result.reverse();
 
+
     return result;
+}
+
+function shuffle(array) {
+    let currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
 }
 
 function checkIfNeedsPivot()
