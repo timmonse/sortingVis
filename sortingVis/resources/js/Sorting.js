@@ -308,22 +308,32 @@ async function merge_sort(arr) {
                 } else {
                     buffer[i++] = sorted[right++];
                 }
+
+                showArray(sorted);
+                await checkPause();
             }
             while (left < leftLimit) {
                 buffer[i++] = sorted[left++];
+
+                showArray(sorted);
+                await checkPause();
             }
             while (right < rightLimit) {
                 buffer[i++] = sorted[right++];
+
+                showArray(sorted);
+                await checkPause();
             }
         }
 
         var temp = sorted,
             sorted = buffer,
             buffer = temp;
-    }
 
-    showArray(sorted);
-    await checkPause();
+
+        showArray(sorted);
+        await checkPause();
+    }
 }
 
 function initView() {
