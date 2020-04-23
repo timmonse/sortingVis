@@ -95,29 +95,67 @@ public class TestFile {
             // Optional. If not specified, WebDriver searches the PATH for chromedriver.
             System.setProperty("webdriver.chrome.driver", "selenium/chromedriver.exe");
 
-            WebDriver driver = new ChromeDriver();
+            //List of options to eliminate as many errors as possible
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("start-maximized"); // https://stackoverflow.com/a/26283818/1689770
+            options.addArguments("enable-automation"); // https://stackoverflow.com/a/43840128/1689770
+            //options.addArguments("--headless"); // only if you are ACTUALLY running headless
+            options.addArguments("--no-sandbox"); //https://stackoverflow.com/a/50725918/1689770
+            options.addArguments("--disable-infobars"); //https://stackoverflow.com/a/43840128/1689770
+            options.addArguments("--disable-dev-shm-usage"); //https://stackoverflow.com/a/50725918/1689770
+            options.addArguments("--disable-browser-side-navigation"); //https://stackoverflow.com/a/49123152/1689770
+            options.addArguments("--disable-gpu"); //https://stackoverflow.com/questions/51959986/how-to-solve-selenium-chromedriver-timed-out-receiving-message-from-renderer-exc
+            options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+            WebDriver driver = new ChromeDriver(options);
 
             // try-catch block to handle exceptions
             try {
 
                 // Create a file object
                 File f = new File("../about.html");
-
                 // Get the absolute path of file f
                 String absolute = f.getAbsolutePath();
-
                 //Uncomment the following line to see the absolute path seen by the program
                 //System.out.println(absolute);
 
-                driver.get("file:///" + absolute);
+                //Click the evan contact button
+                driver.get("file:///" + absolute); //Go to mainMenu page
+                //Thread.sleep(1000);  // Let the user see the page
+                // Find and click the view sorts button
+                WebElement evanContact = driver.findElement(By.id("evanContact"));
+                evanContact.click(); //This may try to open an email program
+                //Thread.sleep(1000);  // Let the user see the page (this will make it more likely to open an email program)
 
-                Thread.sleep(1000);  // Let the user see the page
+                //Click the ty contact button
+                driver.get("file:///" + absolute); //Go to mainMenu page
+                //Thread.sleep(1000);  // Let the user see the page
+                // Find and click the view sorts button
+                WebElement tyContact = driver.findElement(By.id("tyContact"));
+                tyContact.click(); //This may try to open an email program
+                //Thread.sleep(1000);  // Let the user see the page (this will make it more likely to open an email program)
+
+                //Click the ismael contact button
+                driver.get("file:///" + absolute); //Go to mainMenu page
+                //Thread.sleep(1000);  // Let the user see the page
+                // Find and click the view sorts button
+                WebElement ismaelContact = driver.findElement(By.id("ismaelContact"));
+                ismaelContact.click(); //This may try to open an email program
+                //Thread.sleep(1000);  // Let the user see the page (this will make it more likely to open an email program)
+
+                //Click the sully contact button
+                driver.get("file:///" + absolute); //Go to mainMenu page
+                //Thread.sleep(1000);  // Let the user see the page
+                // Find and click the view sorts button
+                WebElement sullyContact = driver.findElement(By.id("sullyContact"));
+                sullyContact.click(); //This may try to open an email program
+                //Thread.sleep(1000);  // Let the user see the page (this will make it more likely to open an email program)
+
+                driver.quit();
             }
             catch (Exception e) {
                 System.err.println(e.getMessage());
             }
 
-            driver.quit();
         } catch(Exception e) {
             testPassed = false;
         }
@@ -255,29 +293,43 @@ public class TestFile {
             // Optional. If not specified, WebDriver searches the PATH for chromedriver.
             System.setProperty("webdriver.chrome.driver", "selenium/chromedriver.exe");
 
-            WebDriver driver = new ChromeDriver();
+            //List of options to eliminate as many errors as possible
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("start-maximized"); // https://stackoverflow.com/a/26283818/1689770
+            options.addArguments("enable-automation"); // https://stackoverflow.com/a/43840128/1689770
+            //options.addArguments("--headless"); // only if you are ACTUALLY running headless
+            options.addArguments("--no-sandbox"); //https://stackoverflow.com/a/50725918/1689770
+            options.addArguments("--disable-infobars"); //https://stackoverflow.com/a/43840128/1689770
+            options.addArguments("--disable-dev-shm-usage"); //https://stackoverflow.com/a/50725918/1689770
+            options.addArguments("--disable-browser-side-navigation"); //https://stackoverflow.com/a/49123152/1689770
+            options.addArguments("--disable-gpu"); //https://stackoverflow.com/questions/51959986/how-to-solve-selenium-chromedriver-timed-out-receiving-message-from-renderer-exc
+            options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+            WebDriver driver = new ChromeDriver(options);
 
             // try-catch block to handle exceptions
             try {
 
                 // Create a file object
                 File f = new File("../sortMenu.html");
-
                 // Get the absolute path of file f
                 String absolute = f.getAbsolutePath();
-
                 //Uncomment the following line to see the absolute path seen by the program
                 //System.out.println(absolute);
 
-                driver.get("file:///" + absolute);
+                //Click the evan contact button
+                driver.get("file:///" + absolute); //Go to mainMenu page
+                //Thread.sleep(1000);  // Let the user see the page
+                // Find and click the view sorts button
+                WebElement insertion = driver.findElement(By.name("Insertion Sort"));
+                insertion.click(); //This may try to open an email program
+                Thread.sleep(1000);  // Let the user see the page (this will make it more likely to open an email program)
 
-                Thread.sleep(1000);  // Let the user see the page
+                driver.quit();
             }
             catch (Exception e) {
                 System.err.println(e.getMessage());
             }
 
-            driver.quit();
         } catch(Exception e) {
             testPassed = false;
         }
