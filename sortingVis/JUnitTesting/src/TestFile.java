@@ -35,6 +35,22 @@ public class TestFile {
                 driver.get("file:///" + absolute);
 
                 Thread.sleep(1000);  // Let the user see the page
+
+                WebElement viewSorts = driver.findElement(By.id("viewSorts"));
+                viewSorts.click();
+
+                Thread.sleep(1000);  // Let the user see the page
+
+                driver.get("file:///" + absolute);
+
+                Thread.sleep(1000);  // Let the user see the page
+
+                WebElement about = driver.findElement(By.id("about-button"));
+                about.click();
+
+                Thread.sleep(1000);  // Let the user see the page
+
+
             }
             catch (Exception e) {
                 System.err.println(e.getMessage());
