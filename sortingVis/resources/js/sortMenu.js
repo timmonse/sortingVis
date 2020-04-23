@@ -3,37 +3,37 @@ var sorts = {
     Model: [
         {
             "name": "Bubble Sort",
-            "image": "https://i2.wp.com/abovethecrowd.com/wp-content/uploads/2014/01/bubbles-water-transparent-design.jpg?resize=1024%2C768",
+            "image": "resources/images/bubbleSortPic.jpg",
             "page": "sorting.html",
             "value" : "BubbleSort",
         },
         {
             "name": "Selection Sort",
-            "image": "https://marketingweek.imgix.net/content/uploads/2017/09/15160117/selection_750.jpg?auto=compress,format&q=60&w=750&h=460",
+            "image": "resources/images/selectionSortPic.jpg",
             "page": "sorting.html",
             "value" : "SelectionSort",
         },
         {
             "name": "Merge Sort",
-            "image": "https://assets1.consumergoods.com/styles/content_sm/s3/2020-02/GettyImages-1019177936_0.jpg?itok=2XSZKfHH",
+            "image": "resources/images/mergeSortPic.jpg",
             "page": "sorting.html",
             "value" : "MergeSort",
         },
         {
             "name": "Insertion Sort",
-            "image": "https://cdn2.iconfinder.com/data/icons/vending-machine/500/insert-512.png",
+            "image": "resources/images/insertionSortPic.jpg",
             "page": "sorting.html",
             "value" : "InsertionSort",
         },
         {
             "name": "Quick Sort",
-            "image": "https://lh3.googleusercontent.com/proxy/d0IgwpN9edH0voOpjfvoQWEZ1gg5PKQ0nwdk6fCwDon90FCYtKy3Fwb1QTR9yqPHKRkng-ZqRCTRYOXJU2Et_KbEifDUwf8ltXLsvnmV9jSUO60rhhZA1jqj5P1LVV3J1Md8VR1Ni6Ko4DWw2OeqtGC-",
+            "image": "resources/images/quickSortPic.jpg",
             "page": "sorting.html",
             "value" : "QuickSort",
         },
         {
             "name": "Heap Sort",
-            "image": "https://blog.hubspot.com/hubfs/how-to-sort-in-excel.jpg",
+            "image": "resources/images/heapSortPic.jpg",
             "page": "sorting.html",
             "value" : "HeapSort",
         },
