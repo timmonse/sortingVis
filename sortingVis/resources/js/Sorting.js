@@ -7,7 +7,7 @@ async function runSort() {
     let whichSort = document.getElementById("algorithm_select").value;
 
     if (whichSort === "BubbleSort")
-        await bubble_sort(arr);
+        await bubble_sort(arr, showArray, checkPause);
     else if (whichSort === "SelectionSort")
         await selection_sort(arr);
     else if (whichSort === "InsertionSort")
@@ -119,7 +119,6 @@ function makeArray(numElements, inputElement)
     else if (inputElement.value == "Reversed")
         result.reverse();
 
-
     return result;
 }
 
@@ -156,7 +155,7 @@ function checkIfNeedsPivot()
     }
 }
 
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 function swap(arr, first_Index, second_Index) {
     let temp = arr[first_Index];
@@ -164,7 +163,7 @@ function swap(arr, first_Index, second_Index) {
     arr[second_Index] = temp;
 }
 
-async function bubble_sort(arr) {
+async function bubble_sort(arr, drawFunc, waitFunc) {
     let len = arr.length;
     let i, j, stop;
 
@@ -172,12 +171,18 @@ async function bubble_sort(arr) {
         for (j = 0, stop = len - i; j < stop; j++) {
             if (arr[j] > arr[j + 1]) {
                 swap(arr, j, j + 1);
-                showArray(arr);
-                await checkPause();
+                drawFunc(arr);
+                await waitFunc();
             }
         }
     }
+
+    return arr;
 }
+
+module.exports.bubble_sort = bubble_sort;
+module.exports.checkPause = checkPause;
+module.exports.showArray = showArray;
 
 async function insertion_sort(arr) {
     for (let i = 1; i < arr.length; i++) {
