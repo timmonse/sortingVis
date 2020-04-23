@@ -9,15 +9,15 @@ async function runSort() {
     if (whichSort === "BubbleSort")
         await bubble_sort(arr, showArray, checkPause);
     else if (whichSort === "SelectionSort")
-        await selection_sort(arr);
+        await selection_sort(arr, showArray, checkPause);
     else if (whichSort === "InsertionSort")
-        await insertion_sort(arr);
+        await insertion_sort(arr, showArray, checkPause);
     else if (whichSort === "QuickSort")
-        await quick_sort(arr, 0, size - 1);
+        await quick_sort(arr, 0, size - 1, showArray, checkPause);
     else if (whichSort === "HeapSort")
-        await heap_sort(arr);
+        await heap_sort(arr, showArray, checkPause);
     else
-        await merge_sort(arr)
+        await merge_sort(arr, showArray, checkPause)
 }
 
 function myFunction() {
@@ -180,27 +180,23 @@ async function bubble_sort(arr, drawFunc, waitFunc) {
     return arr;
 }
 
-module.exports.bubble_sort = bubble_sort;
-module.exports.checkPause = checkPause;
-module.exports.showArray = showArray;
-
-async function insertion_sort(arr) {
+async function insertion_sort(arr, drawFunc, waitFunc) {
     for (let i = 1; i < arr.length; i++) {
         let j = i - 1;
         let temp = arr[i];
         while (j >= 0 && arr[j] > temp) {
             arr[j + 1] = arr[j];
-            showArray(arr);
-            await checkPause();
+            drawFunc(arr);
+            await waitFunc();
             j--;
         }
         arr[j + 1] = temp;
-        showArray(arr);
-        await checkPause();
+        drawFunc(arr);
+        await waitFunc();
     }
 }
 
-async function selection_sort(arr) {
+async function selection_sort(arr, drawFunc, waitFunc) {
     let len = arr.length
     let min;
 
@@ -215,23 +211,23 @@ async function selection_sort(arr) {
 
         if (i != min) {
             swap(arr, i, min);
-            showArray(arr);
-            await checkPause();
+            drawFunc(arr);
+            await waitFunc();
         }
     }
 }
 
-async function quick_sort(arr, left, right) {
+async function quick_sort(arr, left, right, drawFunc, waitFunc) {
     if(left < right)
     {
-        let pivot = await partition(arr, left, right);
+        let pivot = await partition(arr, left, right, drawFunc, waitFunc);
 
         await quick_sort(arr, left, pivot - 1);
         await quick_sort(arr, pivot + 1, right)
     }
 }
 
-async function partition(arr, leftIndex, rightIndex) {
+async function partition(arr, leftIndex, rightIndex, drawFunc, waitFunc) {
     let pivot = rightIndex;
     let i = leftIndex - 1;
     let j = leftIndex;
@@ -247,13 +243,13 @@ async function partition(arr, leftIndex, rightIndex) {
     }
 
     swap(arr, i + 1, pivot);
-    showArray(arr);
-    await checkPause();
+    drawFunc(arr);
+    await waitFunc();
 
     return i + 1
 }
 
-function heap_sort(arr) {
+function heap_sort(arr, drawFunc, waitFunc) {
 	let length = arr.length;
 	let i = Math.floor(length / 2 - 1);
 	let k = length - 1;
@@ -272,7 +268,7 @@ function heap_sort(arr) {
 	return arr;
 }
 
-async function heapify(arr, length, i) {
+async function heapify(arr, length, i, drawFunc, waitFunc) {
     let largest = i;
     let left = i * 2 + 1;
     let right = left + 1;
@@ -289,13 +285,12 @@ async function heapify(arr, length, i) {
         [arr[i], arr[largest]] = [arr[largest], arr[i]];
         heapify(arr, length, largest);
     }
-
-    showArray(arr);
-    await checkPause();
+    drawFunc(arr);
+    await waitFunc();
 }
 
 //This is an iterative version of merge sort because it is hard to show the array after each step of recursion.
-async function merge_sort(arr) {
+async function merge_sort(arr, drawFunc, waitFunc) {
     var sorted = arr.slice(),
         n = sorted.length,
         buffer = new Array(n);
@@ -314,20 +309,20 @@ async function merge_sort(arr) {
                     buffer[i++] = sorted[right++];
                 }
 
-                showArray(sorted);
-                await checkPause();
+                drawFunc(arr);
+                await waitFunc();
             }
             while (left < leftLimit) {
                 buffer[i++] = sorted[left++];
 
-                showArray(sorted);
-                await checkPause();
+                drawFunc(arr);
+                await waitFunc();
             }
             while (right < rightLimit) {
                 buffer[i++] = sorted[right++];
 
-                showArray(sorted);
-                await checkPause();
+                drawFunc(arr);
+                await waitFunc();
             }
         }
 
@@ -336,8 +331,8 @@ async function merge_sort(arr) {
             buffer = temp;
 
 
-        showArray(sorted);
-        await checkPause();
+        drawFunc(arr);
+        await waitFunc();
     }
 }
 
@@ -351,3 +346,10 @@ function initView() {
         }
     }
 }
+
+module.exports.bubble_sort = bubble_sort;
+module.exports.selection_sort = selection_sort;
+module.exports.insertion_sort = insertion_sort;
+module.exports.quick_sort = quick_sort;
+module.exports.heap_sort = heap_sort;
+module.exports.merge_sort = merge_sort;
