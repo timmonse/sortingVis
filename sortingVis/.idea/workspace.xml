@@ -50,7 +50,16 @@
       <recent name="D:\Classes\COMS319\g35\sortingVis\JUnitTesting\selenium" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestFile.sortingInitialOrder">
+  <component name="RunManager" selected="JUnit.TestFile">
+    <configuration name="TestFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JUnitTesting" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestFile" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestFile.sortingHeap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JUnitTesting" />
       <option name="PACKAGE_NAME" value="" />
@@ -71,16 +80,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestFile.sortingInsertion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JUnitTesting" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestFile" />
-      <option name="METHOD_NAME" value="sortingInsertion" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestFile.sortingMerge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JUnitTesting" />
       <option name="PACKAGE_NAME" value="" />
@@ -91,11 +90,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestFile.sortingQuick" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestFile.sortingSpeedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JUnitTesting" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestFile" />
-      <option name="METHOD_NAME" value="sortingQuick" />
+      <option name="METHOD_NAME" value="sortingSpeedTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -103,11 +102,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestFile" />
+        <item itemvalue="JUnit.TestFile.sortingSpeedTest" />
         <item itemvalue="JUnit.TestFile.sortingInitialOrder" />
         <item itemvalue="JUnit.TestFile.sortingMerge" />
         <item itemvalue="JUnit.TestFile.sortingHeap" />
-        <item itemvalue="JUnit.TestFile.sortingQuick" />
-        <item itemvalue="JUnit.TestFile.sortingInsertion" />
       </list>
     </recent_temporary>
   </component>
@@ -141,7 +140,7 @@
       <workItem from="1587501814402" duration="95000" />
       <workItem from="1587584648942" duration="27000" />
       <workItem from="1587601014041" duration="5930000" />
-      <workItem from="1587699175854" duration="1434000" />
+      <workItem from="1587699175854" duration="1869000" />
     </task>
     <servers />
   </component>
@@ -156,22 +155,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587584666330" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1587700615591">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1587701064291">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587700615591" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1587700615591">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587701064291" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1587701064290">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587700615591" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1587700615591">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587701064290" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1587701064290">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587700615591" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1587700615591">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587701064290" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1587701064290">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587700615591" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587701064290" />
     <state x="277" y="55" key="SettingsEditor" timestamp="1586035435069">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

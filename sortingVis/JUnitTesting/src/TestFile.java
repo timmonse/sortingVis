@@ -2,6 +2,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.io.File;
@@ -712,6 +714,72 @@ public class TestFile {
                 Thread.sleep(1000);  // Let the user see the page
                 startButton1.click();
                 Thread.sleep(1000);  // Let the user see the page
+
+                driver.quit();
+            }
+            catch (Exception e) {
+                System.err.println(e.getMessage());
+            }
+
+        } catch(Exception e) {
+            testPassed = false;
+        }
+
+        //Check to ensure that no exception was thrown during testing
+        Assert.assertTrue(testPassed);
+    }
+
+    @Test
+    public void sortingSpeedTest() throws InterruptedException {
+        boolean testPassed = true;
+
+        // calling method under test
+        try {
+            // Optional. If not specified, WebDriver searches the PATH for chromedriver.
+            System.setProperty("webdriver.chrome.driver", "selenium/chromedriver.exe");
+
+            //List of options to eliminate as many errors as possible
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("start-maximized"); // https://stackoverflow.com/a/26283818/1689770
+            options.addArguments("enable-automation"); // https://stackoverflow.com/a/43840128/1689770
+            //options.addArguments("--headless"); // only if you are ACTUALLY running headless
+            options.addArguments("--no-sandbox"); //https://stackoverflow.com/a/50725918/1689770
+            options.addArguments("--disable-infobars"); //https://stackoverflow.com/a/43840128/1689770
+            options.addArguments("--disable-dev-shm-usage"); //https://stackoverflow.com/a/50725918/1689770
+            options.addArguments("--disable-browser-side-navigation"); //https://stackoverflow.com/a/49123152/1689770
+            options.addArguments("--disable-gpu"); //https://stackoverflow.com/questions/51959986/how-to-solve-selenium-chromedriver-timed-out-receiving-message-from-renderer-exc
+            options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+            WebDriver driver = new ChromeDriver(options);
+
+            // try-catch block to handle exceptions
+            try {
+
+                // Create a file object
+                File f = new File("../Sorting.html");
+                // Get the absolute path of file f
+                String absolute = f.getAbsolutePath();
+                //Uncomment the following line to see the absolute path seen by the program
+                //System.out.println(absolute);
+
+                //Test algorithm and change speed slider to different values
+                driver.get("file:///" + absolute); //Go to sorting page
+                //Thread.sleep(1000);  // Let the user see the page
+                // Find and click the view sorts button
+                WebElement startButton = driver.findElement(By.id("start_btn"));
+                WebElement slider = driver.findElement(By.id("slider"));
+
+                //Using Action Class
+                Actions move = new Actions(driver);
+                Action action = move.dragAndDropBy(slider, 30, 0).build();
+                action.perform();
+
+                Thread.sleep(1000);  // Let the user see the page
+                startButton.click();
+                Thread.sleep(1000);  // Let the user see the page
+                Action action2 = move.dragAndDropBy(slider, -50, 0).build();
+                action2.perform();
+                Thread.sleep(1000);  // Let the user see the page
+
 
                 driver.quit();
             }
