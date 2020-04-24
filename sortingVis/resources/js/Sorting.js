@@ -17,7 +17,7 @@ async function runSort() {
     else if (whichSort === "HeapSort")
         await heap_sort(arr, showArray, checkPause);
     else
-        await merge_sort(arr, showArray, checkPause)
+        await merge_sort(arr);
 }
 
 function myFunction() {
@@ -298,7 +298,7 @@ async function heapify(arr, length, i, drawFunc, waitFunc) {
 }
 
 //This is an iterative version of merge sort because it is hard to show the array after each step of recursion.
-async function merge_sort(arr, drawFunc, waitFunc) {
+async function merge_sort(arr) {
     var sorted = arr.slice(),
         n = sorted.length,
         buffer = new Array(n);
@@ -317,20 +317,20 @@ async function merge_sort(arr, drawFunc, waitFunc) {
                     buffer[i++] = sorted[right++];
                 }
 
-                drawFunc(arr);
-                await waitFunc();
+                showArray(sorted);
+                await checkPause();
             }
             while (left < leftLimit) {
                 buffer[i++] = sorted[left++];
 
-                drawFunc(arr);
-                await waitFunc();
+                showArray(sorted);
+                await checkPause();
             }
             while (right < rightLimit) {
                 buffer[i++] = sorted[right++];
 
-                drawFunc(arr);
-                await waitFunc();
+                showArray(sorted);
+                await checkPause();
             }
         }
 
@@ -339,9 +339,11 @@ async function merge_sort(arr, drawFunc, waitFunc) {
             buffer = temp;
 
 
-        drawFunc(arr);
-        await waitFunc();
+        showArray(sorted);
+        await checkPause();
     }
+
+    return arr;
 }
 
 function initView() {
