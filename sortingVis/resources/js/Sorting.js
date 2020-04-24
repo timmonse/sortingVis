@@ -7,17 +7,17 @@ async function runSort() {
     let whichSort = document.getElementById("algorithm_select").value;
 
     if (whichSort === "BubbleSort")
-        await bubble_sort(arr);
+        await bubble_sort(arr, showArray, checkPause);
     else if (whichSort === "SelectionSort")
-        await selection_sort(arr);
+        await selection_sort(arr, showArray, checkPause);
     else if (whichSort === "InsertionSort")
-        await insertion_sort(arr);
+        await insertion_sort(arr, showArray, checkPause);
     else if (whichSort === "QuickSort")
         await quick_sort(arr, 0, size - 1);
     else if (whichSort === "HeapSort")
-        await heap_sort(arr);
+        await heap_sort(arr, showArray, checkPause);
     else
-        await merge_sort(arr)
+        await merge_sort(arr);
 }
 
 function myFunction() {
@@ -119,7 +119,6 @@ function makeArray(numElements, inputElement)
     else if (inputElement.value == "Reversed")
         result.reverse();
 
-
     return result;
 }
 
@@ -156,7 +155,7 @@ function checkIfNeedsPivot()
     }
 }
 
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 function swap(arr, first_Index, second_Index) {
     let temp = arr[first_Index];
@@ -164,7 +163,7 @@ function swap(arr, first_Index, second_Index) {
     arr[second_Index] = temp;
 }
 
-async function bubble_sort(arr) {
+async function bubble_sort(arr, drawFunc, waitFunc) {
     let len = arr.length;
     let i, j, stop;
 
@@ -172,30 +171,34 @@ async function bubble_sort(arr) {
         for (j = 0, stop = len - i; j < stop; j++) {
             if (arr[j] > arr[j + 1]) {
                 swap(arr, j, j + 1);
-                showArray(arr);
-                await checkPause();
+                drawFunc(arr);
+                await waitFunc();
             }
         }
     }
+
+    return arr;
 }
 
-async function insertion_sort(arr) {
+async function insertion_sort(arr, drawFunc, waitFunc) {
     for (let i = 1; i < arr.length; i++) {
         let j = i - 1;
         let temp = arr[i];
         while (j >= 0 && arr[j] > temp) {
             arr[j + 1] = arr[j];
-            showArray(arr);
-            await checkPause();
+            drawFunc(arr);
+            await waitFunc();
             j--;
         }
         arr[j + 1] = temp;
-        showArray(arr);
-        await checkPause();
+        drawFunc(arr);
+        await waitFunc();
     }
+
+    return arr;
 }
 
-async function selection_sort(arr) {
+async function selection_sort(arr, drawFunc, waitFunc) {
     let len = arr.length
     let min;
 
@@ -210,64 +213,70 @@ async function selection_sort(arr) {
 
         if (i != min) {
             swap(arr, i, min);
-            showArray(arr);
-            await checkPause();
+            drawFunc(arr);
+            await waitFunc();
         }
     }
+
+    return arr;
 }
 
 async function quick_sort(arr, left, right) {
     if(left < right)
     {
-        let pivot = await partition(arr, left, right);
+        let pivot = await partition(arr, left, right, showArray, checkPause);
 
         await quick_sort(arr, left, pivot - 1);
         await quick_sort(arr, pivot + 1, right)
     }
+
+    return arr;
 }
 
-async function partition(arr, leftIndex, rightIndex) {
+async function partition(arr, leftIndex, rightIndex, drawFunc, waitFunc) {
     let pivot = rightIndex;
     let i = leftIndex - 1;
     let j = leftIndex;
 
     while (j < pivot) {
         if (arr[j] > arr[pivot]) {
-            j++
+            j++;
         } else {
             i++;
             swap(arr, j, i);
+            drawFunc(arr);
+            await waitFunc();
             j++
         }
     }
 
     swap(arr, i + 1, pivot);
-    showArray(arr);
-    await checkPause();
+    drawFunc(arr);
+    await waitFunc();
 
-    return i + 1
+    return i + 1;
 }
 
-function heap_sort(arr) {
+function heap_sort(arr, drawFunc, waitFunc) {
 	let length = arr.length;
 	let i = Math.floor(length / 2 - 1);
 	let k = length - 1;
 	
 	while(i >= 0) {
-		heapify(arr, length, i);
+		heapify(arr, length, i, drawFunc, waitFunc);
 		i--;
 	}
 	
 	while(k >= 0) {
 		[arr[0], arr[k]] = [arr[k], arr[0]];
-		heapify(arr, k, 0);
+		heapify(arr, k, 0, drawFunc, waitFunc);
 		k--;
 	}
 	
 	return arr;
 }
 
-async function heapify(arr, length, i) {
+async function heapify(arr, length, i, drawFunc, waitFunc) {
     let largest = i;
     let left = i * 2 + 1;
     let right = left + 1;
@@ -282,11 +291,10 @@ async function heapify(arr, length, i) {
 
     if (largest != i) {
         [arr[i], arr[largest]] = [arr[largest], arr[i]];
-        heapify(arr, length, largest);
+        heapify(arr, length, largest, drawFunc, waitFunc);
     }
-
-    showArray(arr);
-    await checkPause();
+    drawFunc(arr);
+    await waitFunc();
 }
 
 //This is an iterative version of merge sort because it is hard to show the array after each step of recursion.
@@ -334,6 +342,8 @@ async function merge_sort(arr) {
         showArray(sorted);
         await checkPause();
     }
+
+    return arr;
 }
 
 function initView() {
@@ -346,3 +356,11 @@ function initView() {
         }
     }
 }
+
+module.exports.bubble_sort = bubble_sort;
+module.exports.selection_sort = selection_sort;
+module.exports.insertion_sort = insertion_sort;
+module.exports.quick_sort = quick_sort;
+module.exports.heap_sort = heap_sort;
+module.exports.merge_sort = merge_sort;
+module.exports.partition = partition;
