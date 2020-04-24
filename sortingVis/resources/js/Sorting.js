@@ -13,7 +13,7 @@ async function runSort() {
     else if (whichSort === "InsertionSort")
         await insertion_sort(arr, showArray, checkPause);
     else if (whichSort === "QuickSort")
-        await quick_sort(arr, 0, size - 1, showArray, checkPause);
+        await quick_sort(arr, 0, size - 1);
     else if (whichSort === "HeapSort")
         await heap_sort(arr, showArray, checkPause);
     else
@@ -194,6 +194,8 @@ async function insertion_sort(arr, drawFunc, waitFunc) {
         drawFunc(arr);
         await waitFunc();
     }
+
+    return arr;
 }
 
 async function selection_sort(arr, drawFunc, waitFunc) {
@@ -215,16 +217,20 @@ async function selection_sort(arr, drawFunc, waitFunc) {
             await waitFunc();
         }
     }
+
+    return arr;
 }
 
-async function quick_sort(arr, left, right, drawFunc, waitFunc) {
+async function quick_sort(arr, left, right) {
     if(left < right)
     {
-        let pivot = await partition(arr, left, right, drawFunc, waitFunc);
+        let pivot = await partition(arr, left, right, showArray, checkPause);
 
         await quick_sort(arr, left, pivot - 1);
         await quick_sort(arr, pivot + 1, right)
     }
+
+    return arr;
 }
 
 async function partition(arr, leftIndex, rightIndex, drawFunc, waitFunc) {
@@ -234,10 +240,12 @@ async function partition(arr, leftIndex, rightIndex, drawFunc, waitFunc) {
 
     while (j < pivot) {
         if (arr[j] > arr[pivot]) {
-            j++
+            j++;
         } else {
             i++;
             swap(arr, j, i);
+            drawFunc(arr);
+            await waitFunc();
             j++
         }
     }
@@ -246,7 +254,7 @@ async function partition(arr, leftIndex, rightIndex, drawFunc, waitFunc) {
     drawFunc(arr);
     await waitFunc();
 
-    return i + 1
+    return i + 1;
 }
 
 function heap_sort(arr, drawFunc, waitFunc) {
@@ -255,13 +263,13 @@ function heap_sort(arr, drawFunc, waitFunc) {
 	let k = length - 1;
 	
 	while(i >= 0) {
-		heapify(arr, length, i);
+		heapify(arr, length, i, drawFunc, waitFunc);
 		i--;
 	}
 	
 	while(k >= 0) {
 		[arr[0], arr[k]] = [arr[k], arr[0]];
-		heapify(arr, k, 0);
+		heapify(arr, k, 0, drawFunc, waitFunc);
 		k--;
 	}
 	
@@ -283,7 +291,7 @@ async function heapify(arr, length, i, drawFunc, waitFunc) {
 
     if (largest != i) {
         [arr[i], arr[largest]] = [arr[largest], arr[i]];
-        heapify(arr, length, largest);
+        heapify(arr, length, largest, drawFunc, waitFunc);
     }
     drawFunc(arr);
     await waitFunc();
@@ -353,3 +361,4 @@ module.exports.insertion_sort = insertion_sort;
 module.exports.quick_sort = quick_sort;
 module.exports.heap_sort = heap_sort;
 module.exports.merge_sort = merge_sort;
+module.exports.partition = partition;
