@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f7618a6-8d0a-49e6-8c02-6103d0094e20" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUnitTesting/debug.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,15 +40,16 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Classes\COMS319\g35\sortingVis\JUnitTesting\selenium" />
+      <recent name="D:\Classes\COMS319\g35\sortingVis\resources\images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Classes\COMS319\g35\sortingVis\resources\images" />
       <recent name="D:\Classes\COMS319\g35\sortingVis\JUnitTesting\selenium" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Classes\COMS319\g35\sortingVis\resources\images" />
-    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.TestFile">
     <configuration name="TestFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JUnitTesting" />
       <option name="PACKAGE_NAME" value="" />
@@ -58,9 +59,53 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestFile.sortingHeap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JUnitTesting" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestFile" />
+      <option name="METHOD_NAME" value="sortingHeap" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestFile.sortingInitialOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JUnitTesting" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestFile" />
+      <option name="METHOD_NAME" value="sortingInitialOrder" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestFile.sortingMerge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JUnitTesting" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestFile" />
+      <option name="METHOD_NAME" value="sortingMerge" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestFile.sortingSpeedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JUnitTesting" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestFile" />
+      <option name="METHOD_NAME" value="sortingSpeedTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestFile" />
+        <item itemvalue="JUnit.TestFile.sortingSpeedTest" />
+        <item itemvalue="JUnit.TestFile.sortingInitialOrder" />
+        <item itemvalue="JUnit.TestFile.sortingMerge" />
+        <item itemvalue="JUnit.TestFile.sortingHeap" />
       </list>
     </recent_temporary>
   </component>
@@ -90,6 +135,11 @@
       <workItem from="1586988446677" duration="14531000" />
       <workItem from="1587150189915" duration="107000" />
       <workItem from="1587312594098" duration="2916000" />
+      <workItem from="1587267439524" duration="30000" />
+      <workItem from="1587501814402" duration="95000" />
+      <workItem from="1587584648942" duration="27000" />
+      <workItem from="1587601014041" duration="5930000" />
+      <workItem from="1587699175854" duration="2037000" />
     </task>
     <servers />
   </component>
@@ -100,37 +150,37 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1586621275446">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1587584666330">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586621275446" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1585967069488">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587584666330" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1587701214275">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585967069488" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1585967069488">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587701214275" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1587701214275">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585967069488" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1585967069488">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587701214275" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1587701214275">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585967069488" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1585967069488">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587701214275" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1587701214275">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585967069488" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587701214275" />
     <state x="277" y="55" key="SettingsEditor" timestamp="1586035435069">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586035435069" />
-    <state x="238" y="88" key="new project wizard" timestamp="1586043449539">
+    <state x="238" y="66" key="new project wizard" timestamp="1587584674241">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="238" y="88" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1586043449539" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1587000876098">
+    <state x="238" y="66" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1587584674241" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1587605196857">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1587000876098" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1587605196857" />
   </component>
 </project>
