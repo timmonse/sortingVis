@@ -58,14 +58,6 @@ public class TestFile {
                 viewSorts.click();
                 //Thread.sleep(1000);  // Let the user see the page
 
-                //Settings Test
-                driver.get("file:///" + absolute); //Go to mainMenu page
-                //Thread.sleep(1000);  // Let the user see the page
-                // Find and click the settings button
-                WebElement settings = driver.findElement(By.id("button-settings"));
-                settings.click();
-                //Thread.sleep(1000);  // Let the user see the page
-
                 //About Test
                 driver.get("file:///" + absolute); //Go to mainMenu page
                 //Thread.sleep(1000);  // Let the user see the page
@@ -182,46 +174,6 @@ public class TestFile {
 
                 // Create a file object
                 File f = new File("../instructions.html");
-
-                // Get the absolute path of file f
-                String absolute = f.getAbsolutePath();
-
-                //Uncomment the following line to see the absolute path seen by the program
-                //System.out.println(absolute);
-
-                driver.get("file:///" + absolute);
-
-                Thread.sleep(1000);  // Let the user see the page
-            }
-            catch (Exception e) {
-                System.err.println(e.getMessage());
-            }
-
-            driver.quit();
-        } catch(Exception e) {
-            testPassed = false;
-        }
-
-        //Check to ensure that no exception was thrown during testing
-        Assert.assertTrue(testPassed);
-    }
-
-    @Test
-    public void settingsGeneral() throws InterruptedException {
-        boolean testPassed = true;
-
-        // calling method under test
-        try {
-            // Optional. If not specified, WebDriver searches the PATH for chromedriver.
-            System.setProperty("webdriver.chrome.driver", "selenium/chromedriver.exe");
-
-            WebDriver driver = new ChromeDriver();
-
-            // try-catch block to handle exceptions
-            try {
-
-                // Create a file object
-                File f = new File("../settings.html");
 
                 // Get the absolute path of file f
                 String absolute = f.getAbsolutePath();
