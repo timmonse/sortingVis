@@ -146,7 +146,7 @@
 .button {
     display: inline-flex;
     height: 40px;
-    width: 150px;
+    width: 170px;
     border: 2px solid #000000;
     /*margin: 20px 20px 20px 20px;*/
     color: #000000;
@@ -165,8 +165,7 @@ a {
     letter-spacing: 1px;
 }
 
-
-#button-settings {
+#button-instructions {
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -174,12 +173,12 @@ a {
     opacity: 0.8;
 }
 
-#button-settings a {
+#button-instructions {
     position: relative;
     transition: all .45s ease-Out;
 }
 
-#underline-settings {
+#underline-instructions {
     width: 100%;
     height: 2.5px;
     margin-top: 15px;
@@ -191,7 +190,7 @@ a {
     bottom: 0;
 }
 
-#button-settings:hover #underline-settings {
+#button-instructions:hover #underline-instructions {
     left: 0;
 }
 
@@ -207,7 +206,7 @@ a {
     opacity: 0.8;
 }
 
-#button-about a {
+#button-about {
     position: relative;
     transition: all .45s ease-Out;
 }
@@ -227,3 +226,7 @@ a {
 #button-about:hover #underline-about {
     left: 0;
 }
+
+
+
+
