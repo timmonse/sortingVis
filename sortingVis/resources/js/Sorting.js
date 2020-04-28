@@ -144,13 +144,15 @@ function shuffle(array) {
 function getPivotIndex(arr, left, right)
 {
     if (document.getElementById("pivot_select").value === "Random") {
-        return Math.floor(Math.random() * right) + left;
+        var min=left;
+        var max=right-1;
+        return Math.floor(Math.random() * (+max - +min)) + +min;
     } else if (document.getElementById("pivot_select").value === "First") {
         return left;
     } else if (document.getElementById("pivot_select").value === "Middle") {
         return Math.floor((right + left) / 2);
     } else if (document.getElementById("pivot_select").value === "Last") {
-        return right;
+        return right-1;
     }
 
 }
@@ -199,7 +201,7 @@ async function insertion_sort(arr, drawFunc, waitFunc) {
 }
 
 async function selection_sort(arr, drawFunc, waitFunc) {
-    let len = arr.length
+    let len = arr.length;
     let min;
 
     for (i = 0; i < len; i++) {
@@ -245,7 +247,7 @@ async function quick_sort(items, left, right) {
 
 async function partition(items, left, right) {
 
-    var pivot = items[Math.floor((right + left) / 2)];
+    var pivot = items[getPivotIndex(items, left, right)];
     var i = left;
     var j = right;
 
