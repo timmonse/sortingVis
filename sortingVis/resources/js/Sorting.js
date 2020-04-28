@@ -141,16 +141,16 @@ function shuffle(array) {
     return array;
 }
 
-function getPivot(arr, left, right)
+function getPivotIndex(arr, left, right)
 {
     if (document.getElementById("pivot_select").value === "Random") {
-        return arr[Math.floor(Math.random() * right) + left];
+        return Math.floor(Math.random() * right) + left;
     } else if (document.getElementById("pivot_select").value === "First") {
-        return arr[left];
+        return left;
     } else if (document.getElementById("pivot_select").value === "Middle") {
-        return arr[Math.floor((right + left) / 2)];
+        return Math.floor((right + left) / 2);
     } else if (document.getElementById("pivot_select").value === "Last") {
-        return arr[right];
+        return right;
     }
 
 }
@@ -221,47 +221,45 @@ async function selection_sort(arr, drawFunc, waitFunc) {
     return arr;
 }
 
-async function quick_sort(arr, left, right) {
+
+async function quick_sort(items, left, right) {
 
     var index;
 
-    if (arr.length > 1) {
+    if (items.length > 1) {
 
-        index = partition(arr, left, right);
+        index = await partition(items, left, right);
 
         if (left < index - 1) {
-            await quick_sort(arr, left, index - 1);
+            quick_sort(items, left, index - 1);
         }
 
         if (index < right) {
-            await quick_sort(arr, index, right);
+            quick_sort(items, index, right);
         }
-
     }
 
-    return arr;
+    showArray(items);
+    return items;
 }
 
-async function partition(arr, left, right) {
+async function partition(items, left, right) {
 
-    var pivot   = arr[Math.floor((right + left) / 2)],
-        i       = left,
-        j       = right;
-
+    var pivot = items[Math.floor((right + left) / 2)];
+    var i = left;
+    var j = right;
 
     while (i <= j) {
-
-        while (arr[i] < pivot) {
+        while (items[i] < pivot) {
             i++;
         }
-
-        while (arr[j] > pivot) {
+        while (items[j] > pivot) {
             j--;
         }
 
         if (i <= j) {
-            swap(arr, i, j);
-            showArray(arr);
+            swap(items, i, j);
+            showArray(items);
             await checkPause();
             i++;
             j--;
@@ -270,6 +268,7 @@ async function partition(arr, left, right) {
 
     return i;
 }
+
 
 function heap_sort(arr, drawFunc, waitFunc) {
 	let length = arr.length;
