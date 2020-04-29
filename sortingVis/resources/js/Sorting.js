@@ -272,23 +272,27 @@ async function partition(items, left, right) {
 }
 
 
-function heap_sort(arr, drawFunc, waitFunc) {
-	let length = arr.length;
-	let i = Math.floor(length / 2 - 1);
-	let k = length - 1;
-	
-	while(i >= 0) {
-		heapify(arr, length, i, drawFunc, waitFunc);
-		i--;
-	}
-	
-	while(k >= 0) {
-		[arr[0], arr[k]] = [arr[k], arr[0]];
-		heapify(arr, k, 0, drawFunc, waitFunc);
-		k--;
-	}
-	
-	return arr;
+async function heap_sort(arr, drawFunc, waitFunc) {
+    let length = arr.length;
+    let i = Math.floor(length / 2 - 1);
+    let k = length - 1;
+
+    while (i >= 0) {
+        heapify(arr, length, i, drawFunc, waitFunc);
+        i--;
+        showArray(arr);
+        await checkPause();
+    }
+
+    while (k >= 0) {
+        [arr[0], arr[k]] = [arr[k], arr[0]];
+        heapify(arr, k, 0, drawFunc, waitFunc);
+        k--;
+        showArray(arr);
+        await checkPause();
+    }
+
+    return arr;
 }
 
 async function heapify(arr, length, i, drawFunc, waitFunc) {
