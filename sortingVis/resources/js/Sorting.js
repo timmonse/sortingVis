@@ -272,23 +272,27 @@ async function partition(items, left, right) {
 }
 
 
-function heap_sort(arr, drawFunc, waitFunc) {
-	let length = arr.length;
-	let i = Math.floor(length / 2 - 1);
-	let k = length - 1;
-	
-	while(i >= 0) {
-		heapify(arr, length, i, drawFunc, waitFunc);
-		i--;
-	}
-	
-	while(k >= 0) {
-		[arr[0], arr[k]] = [arr[k], arr[0]];
-		heapify(arr, k, 0, drawFunc, waitFunc);
-		k--;
-	}
-	
-	return arr;
+async function heap_sort(arr, drawFunc, waitFunc) {
+    let length = arr.length;
+    let i = Math.floor(length / 2 - 1);
+    let k = length - 1;
+
+    while (i >= 0) {
+        heapify(arr, length, i, drawFunc, waitFunc);
+        i--;
+        showArray(arr);
+        await checkPause();
+    }
+
+    while (k >= 0) {
+        [arr[0], arr[k]] = [arr[k], arr[0]];
+        heapify(arr, k, 0, drawFunc, waitFunc);
+        k--;
+        showArray(arr);
+        await checkPause();
+    }
+
+    return arr;
 }
 
 async function heapify(arr, length, i, drawFunc, waitFunc) {
@@ -314,6 +318,9 @@ async function heapify(arr, length, i, drawFunc, waitFunc) {
 
 //This is an iterative version of merge sort because it is hard to show the array after each step of recursion.
 async function merge_sort(arr) {
+    showArray(arr);
+    await checkPause();
+
     var sorted = arr.slice(),
         n = sorted.length,
         buffer = new Array(n);
@@ -332,19 +339,23 @@ async function merge_sort(arr) {
                     buffer[i++] = sorted[right++];
                 }
 
-                showArray(sorted);
-                await checkPause();
+                //showArray(sorted);
+                //await checkPause();
             }
             while (left < leftLimit) {
                 buffer[i++] = sorted[left++];
 
-                showArray(sorted);
-                await checkPause();
+                //showArray(sorted);
+                //await checkPause();
             }
             while (right < rightLimit) {
                 buffer[i++] = sorted[right++];
 
-                showArray(sorted);
+                //showArray(sorted);
+                //await checkPause();
+            }
+            if(size > 1) {
+                showArray(buffer);
                 await checkPause();
             }
         }
@@ -353,9 +364,10 @@ async function merge_sort(arr) {
             sorted = buffer,
             buffer = temp;
 
-
-        showArray(sorted);
-        await checkPause();
+        if(size > 1) {
+            showArray(sorted);
+            await checkPause();
+        }
     }
 
     return arr;
