@@ -1,11 +1,14 @@
 async function runSort() {
+    //get the initializing conditions from user input
     let size = parseInt(document.getElementById("array_size").value);
     let sortElement = document.getElementById("initial_select");
+
+    //generate an array based on user input
     let arr = makeArray(size, sortElement);
     showArray(arr);
 
+    //get the algorithm to be used to sort array from user and begin sorting
     let whichSort = document.getElementById("algorithm_select").value;
-
     if (whichSort === "BubbleSort")
         await bubble_sort(arr, showArray, checkPause);
     else if (whichSort === "SelectionSort")
@@ -77,10 +80,12 @@ function showArray(arr)
     context.fillRect(0, 0, canvas.width, canvas.height);
     context.strokeRect(0, 0, canvas.width, canvas.height);
 
+    //calculate the width of each bar by dividing the canvas width by the total number of bars that need drawn
     let width = canvas.width / arr.length;
 
     for (let i = 0; i < arr.length; i++)
     {
+        //draw a bar for each array element
         drawBar(context, i * width, canvas.height - arr[i], width, arr[i], fillColor);
     }
 }
@@ -112,8 +117,6 @@ function makeArray(numElements, inputElement)
     for (let i = 0; i < numElements; i++)
         result.push(i * scaleFactor);
 
-        //result.push(Math.floor(Math.random()*500));
-
     if (inputElement.value == "Random")
         result = shuffle(result);
     else if (inputElement.value == "Reversed")
@@ -144,14 +147,18 @@ function shuffle(array) {
 function getPivotIndex(arr, left, right)
 {
     if (document.getElementById("pivot_select").value === "Random") {
+        //return a random index between left and right
         var min=left;
         var max=right-1;
         return Math.floor(Math.random() * (+max - +min)) + +min;
     } else if (document.getElementById("pivot_select").value === "First") {
+        // return the leftmost index provided
         return left;
     } else if (document.getElementById("pivot_select").value === "Middle") {
+        //calculate and return the average of left and right, rounded down
         return Math.floor((right + left) / 2);
     } else if (document.getElementById("pivot_select").value === "Last") {
+        //return the rightmost index provided
         return right-1;
     }
 
