@@ -5,6 +5,8 @@
     <title>About</title>
     <link rel="stylesheet" href="resources/css/about.css">
 </head>
+<script src="resources/js/Audio.js"></script>
+
 <body class="body">
 
     <!-- Load an icon library -->
@@ -15,6 +17,10 @@
         <a class="active" href="about.html"><i class="fa fa-fw fa-question"></i> About</a>
         <a href="instructions.html"><i class="fa fa-fw fa-file"></i> Instructions </a>
     </div>
+
+    <!--        Icon for music-->
+    <i id="musicState" class ="fa fa-music fa-2x musicIcon"></i>
+
 
     <p><br></p>
 
@@ -73,6 +79,10 @@
     </div>
 
     <p style="font-family:Bahnschrift;">About Page</p>
+
+    <script>
+        initAudio();
+    </script>
 
 </body>
 </html>

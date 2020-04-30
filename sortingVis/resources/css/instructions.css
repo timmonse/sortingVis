@@ -54,3 +54,10 @@
 .font {
     font: 700 1.2rem 'Bahnschrift', sans-serif;
 }
+
+.musicIcon {
+    float: right;
+    margin-right: 10px;
+    border-color: black;
+    cursor: pointer;
+}
