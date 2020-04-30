@@ -51,6 +51,15 @@ window.onload = function() {
         speed = slider.value;
       dispDiv.innerHTML = "" + (100 - speed);
     }, 100)
+
+    var idx, foo = document.getElementById('algorithm_select');
+    foo.selectedIndex = (idx = self.name.split('algorithm_selectidx')) ?	idx[1] : 0;
+}
+
+onunload = async function()
+{
+    var foo = document.getElementById('algorithm_select');
+    self.name = 'algorithm_selectidx' + foo.selectedIndex;
 }
 
 let isPause = 0;
