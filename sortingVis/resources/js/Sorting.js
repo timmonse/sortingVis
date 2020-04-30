@@ -414,8 +414,11 @@ function initView() {
 function completedSort() {
     let play = document.getElementById("play_btn");
     let pause = document.getElementById("pause_btn");
+    let start = document.getElementById("start_btn");
     play.style.visibility = "hidden";
     pause.style.visibility = "hidden";
+    start.innerText = "Restart";
+    start.style.visibility = "visible";
 }
 
 module.exports.bubble_sort = bubble_sort;
