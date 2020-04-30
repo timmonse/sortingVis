@@ -208,9 +208,14 @@
     display:inline-block;
 }
 
+#refresh_btn{
+    margin: 10px;
+    padding: 5px;
+}
 .musicIcon {
     float: right;
     margin-right: 10px;
     border-color: black;
     cursor: pointer;
 }
+
