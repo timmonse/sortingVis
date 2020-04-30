@@ -398,6 +398,8 @@ async function merge_sort(arr) {
         }
     }
 
+    completedSort()
+
     return arr;
 }
 
@@ -410,6 +412,13 @@ function initView() {
             break;
         }
     }
+}
+
+function completedSort(){
+    let play = document.getElementById("play_btn");
+    let pause = document.getElementById("pause_btn");
+    play.style.visibility = "hidden";
+    pause.style.visibility = "hidden";
 }
 
 module.exports.bubble_sort = bubble_sort;
