@@ -10,15 +10,15 @@ async function runSort() {
     //get the algorithm to be used to sort array from user and begin sorting
     let whichSort = document.getElementById("algorithm_select").value;
     if (whichSort === "BubbleSort")
-        await bubble_sort(arr, showArray, checkPause);
+        await bubble_sort(arr);
     else if (whichSort === "SelectionSort")
-        await selection_sort(arr, showArray, checkPause);
+        await selection_sort(arr);
     else if (whichSort === "InsertionSort")
-        await insertion_sort(arr, showArray, checkPause);
+        await insertion_sort(arr);
     else if (whichSort === "QuickSort")
         await quick_sort(arr, 0, size - 1);
     else if (whichSort === "HeapSort")
-        await heap_sort(arr, showArray, checkPause);
+        await heap_sort(arr);
     else
         await merge_sort(arr);
 }
@@ -177,7 +177,7 @@ function swap(arr, first_Index, second_Index) {
 //Traverse the array left to right
 //If current element is greater than the next element, swap them
 //Continue until largest element is at the right of the array, and repeat with subarray
-async function bubble_sort(arr, drawFunc, waitFunc) {
+async function bubble_sort(arr) {
     let len = arr.length;
     let i, j, stop;
 
@@ -185,8 +185,8 @@ async function bubble_sort(arr, drawFunc, waitFunc) {
         for (j = 0, stop = len - i; j < stop; j++) {
             if (arr[j] > arr[j + 1]) {
                 swap(arr, j, j + 1);
-                drawFunc(arr);
-                await waitFunc();
+                showArray(arr);
+                await checkPause();
             }
         }
     }
@@ -195,26 +195,26 @@ async function bubble_sort(arr, drawFunc, waitFunc) {
 }
 
 //Insertion sort algorithm
-async function insertion_sort(arr, drawFunc, waitFunc) {
+async function insertion_sort(arr) {
     for (let i = 1; i < arr.length; i++) {
         let j = i - 1;
         let temp = arr[i];
         while (j >= 0 && arr[j] > temp) {
             arr[j + 1] = arr[j];
-            drawFunc(arr);
-            await waitFunc();
+            showArray(arr);
+            await checkPause();
             j--;
         } 1
         arr[j + 1] = temp;
-        drawFunc(arr);
-        await waitFunc();
+        showArray(arr);
+        await checkPause();
     }
 
     return arr;
 }
 
 //selection sort algorithm
-async function selection_sort(arr, drawFunc, waitFunc) {
+async function selection_sort(arr) {
     let len = arr.length;
     let min;
 
@@ -229,8 +229,8 @@ async function selection_sort(arr, drawFunc, waitFunc) {
 
         if (i != min) {
             swap(arr, i, min);
-            drawFunc(arr);
-            await waitFunc();
+            showArray(arr);
+            await checkPause();
         }
     }
 
@@ -238,49 +238,48 @@ async function selection_sort(arr, drawFunc, waitFunc) {
 }
 
 //quick sort algorithm
-async function quick_sort(items, left, right) {
+async function quick_sort(arr, left, right) {
 
     var index;
 
-    if (items.length > 1) {
+    if (arr.length > 1) {
 
-        index = await partition(items, left, right);
+        index = await partition(arr, left, right);
 
         if (left < index - 1) {
-            quick_sort(items, left, index - 1);
+            quick_sort(arr, left, index - 1);
         }
 
         if (index < right) {
-            quick_sort(items, index, right);
+            quick_sort(arr, index, right);
         }
     }
 
-    showArray(items);
-    return items;
+    return arr;
 }
 
 //partition function
-async function partition(items, left, right) {
+async function partition(arr, left, right) {
 
     //get pitot value from user input
-    var pivot = items[getPivotIndex(items, left, right)];
+    var pivot = arr[getPivotIndex(arr, left, right)];
     var i = left;
     var j = right;
 
-    //swap items left and right of the pivot value so that all values greater
+    //swap arr left and right of the pivot value so that all values greater
     //than the pivot value are to the right of the pivot index,
     //and all values less are to the left
     while (i <= j) {
-        while (items[i] < pivot) {
+        while (arr[i] < pivot) {
             i++;
         }
-        while (items[j] > pivot) {
+        while (arr[j] > pivot) {
             j--;
         }
 
         if (i <= j) {
-            swap(items, i, j);
-            showArray(items);
+            swap(arr, i, j);
+            showArray(arr);
             await checkPause();
             i++;
             j--;
@@ -291,13 +290,13 @@ async function partition(items, left, right) {
 }
 
 
-async function heap_sort(arr, drawFunc, waitFunc) {
+async function heap_sort(arr) {
     let length = arr.length;
     let i = Math.floor(length / 2 - 1);
     let k = length - 1;
 
     while (i >= 0) {
-        heapify(arr, length, i, drawFunc, waitFunc);
+        heapify(arr, length, i);
         i--;
         showArray(arr);
         await checkPause();
@@ -305,7 +304,7 @@ async function heap_sort(arr, drawFunc, waitFunc) {
 
     while (k >= 0) {
         [arr[0], arr[k]] = [arr[k], arr[0]];
-        heapify(arr, k, 0, drawFunc, waitFunc);
+        heapify(arr, k, 0);
         k--;
         showArray(arr);
         await checkPause();
@@ -314,7 +313,7 @@ async function heap_sort(arr, drawFunc, waitFunc) {
     return arr;
 }
 
-async function heapify(arr, length, i, drawFunc, waitFunc) {
+async function heapify(arr, length, i) {
     let largest = i;
     let left = i * 2 + 1;
     let right = left + 1;
@@ -329,10 +328,10 @@ async function heapify(arr, length, i, drawFunc, waitFunc) {
 
     if (largest != i) {
         [arr[i], arr[largest]] = [arr[largest], arr[i]];
-        heapify(arr, length, largest, drawFunc, waitFunc);
+        heapify(arr, length, largest);
     }
-    drawFunc(arr);
-    await waitFunc();
+    showArray(arr);
+    await checkPause();
 }
 
 //This is an iterative version of merge sort because it is hard to show the array after each step of recursion.
