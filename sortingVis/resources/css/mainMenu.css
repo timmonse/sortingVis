@@ -228,5 +228,13 @@ a {
 }
 
 
+.musicIcon {
+    float: right;
+    margin-right: 10px;
+    border-color: black;
+    cursor: pointer;
+}
+
+
 
 

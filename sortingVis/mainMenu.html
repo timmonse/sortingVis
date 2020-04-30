@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>SortingVis</title>
-    <link rel="stylesheet" href="resources/css/mainMenu.css">
+    <html lang="en">
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>SortingVis</title>
+        <link rel="stylesheet" href="resources/css/mainMenu.css">
+
 </head>
     <body class="body">
+
+
         <!-- Load an icon library -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -14,6 +18,8 @@
             <a href="about.html"><i class="fa fa-fw fa-question"></i> About</a>
             <a href="instructions.html"><i class="fa fa-fw fa-file"></i> Instructions </a>
         </div>
+
+        <i id="musicState" class ="fa fa-music fa-2x musicIcon"></i>
 
         <img src="resources/images/sortingVis.png" alt="SortingVis Logo" class="logo-center">
 
@@ -43,5 +49,27 @@
             </div>
             <div class="grid-item"></div>
         </div>
+
+        <script>
+            var audio;
+            audio = new Audio("resources/music/jazzyfrenchy.mp3");
+            audio.loop = true;
+
+            var isPlaying = false;
+
+            let musicElement = document.getElementById("musicState");
+            musicElement.addEventListener("click", function () {
+                if(!isPlaying){
+                    audio.play()
+                    isPlaying = !isPlaying;
+                }
+                else{
+                    audio.pause();
+                    isPlaying = !isPlaying;
+                }
+            });
+
+
+        </script>
     </body>
 </html>
