@@ -172,6 +172,11 @@ function swap(arr, first_Index, second_Index) {
     arr[second_Index] = temp;
 }
 
+
+//Bubble sort algorithm
+//Traverse the array left to right
+//If current element is greater than the next element, swap them
+//Continue until largest element is at the right of the array, and repeat with subarray
 async function bubble_sort(arr, drawFunc, waitFunc) {
     let len = arr.length;
     let i, j, stop;
@@ -189,6 +194,7 @@ async function bubble_sort(arr, drawFunc, waitFunc) {
     return arr;
 }
 
+//Insertion sort algorithm
 async function insertion_sort(arr, drawFunc, waitFunc) {
     for (let i = 1; i < arr.length; i++) {
         let j = i - 1;
@@ -198,7 +204,7 @@ async function insertion_sort(arr, drawFunc, waitFunc) {
             drawFunc(arr);
             await waitFunc();
             j--;
-        }
+        } 1
         arr[j + 1] = temp;
         drawFunc(arr);
         await waitFunc();
@@ -207,6 +213,7 @@ async function insertion_sort(arr, drawFunc, waitFunc) {
     return arr;
 }
 
+//selection sort algorithm
 async function selection_sort(arr, drawFunc, waitFunc) {
     let len = arr.length;
     let min;
@@ -230,7 +237,7 @@ async function selection_sort(arr, drawFunc, waitFunc) {
     return arr;
 }
 
-
+//quick sort algorithm
 async function quick_sort(items, left, right) {
 
     var index;
@@ -252,12 +259,17 @@ async function quick_sort(items, left, right) {
     return items;
 }
 
+//partition function
 async function partition(items, left, right) {
 
+    //get pitot value from user input
     var pivot = items[getPivotIndex(items, left, right)];
     var i = left;
     var j = right;
 
+    //swap items left and right of the pivot value so that all values greater
+    //than the pivot value are to the right of the pivot index,
+    //and all values less are to the left
     while (i <= j) {
         while (items[i] < pivot) {
             i++;
