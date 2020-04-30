@@ -8,7 +8,7 @@ async function runSort() {
     showArray(arr);
 
     //get the algorithm to be used to sort array from user and begin sorting
-    //Runs completedSort upon its completion 
+    //Runs completedSort upon its completion
     let whichSort = document.getElementById("algorithm_select").value;
     if (whichSort === "BubbleSort") {
         await bubble_sort(arr, showArray, checkPause);
