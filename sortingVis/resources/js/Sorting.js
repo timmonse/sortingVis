@@ -9,18 +9,24 @@ async function runSort() {
 
     //get the algorithm to be used to sort array from user and begin sorting
     let whichSort = document.getElementById("algorithm_select").value;
-    if (whichSort === "BubbleSort")
+    if (whichSort === "BubbleSort") {
         await bubble_sort(arr, showArray, checkPause);
-    else if (whichSort === "SelectionSort")
+        completedSort();
+    } else if (whichSort === "SelectionSort") {
         await selection_sort(arr, showArray, checkPause);
-    else if (whichSort === "InsertionSort")
+        completedSort();
+    } else if (whichSort === "InsertionSort") {
         await insertion_sort(arr, showArray, checkPause);
-    else if (whichSort === "QuickSort")
+        completedSort();
+    } else if (whichSort === "QuickSort") {
         await quick_sort(arr, 0, size - 1);
-    else if (whichSort === "HeapSort")
+        completedSort();
+    } else if (whichSort === "HeapSort") {
         await heap_sort(arr, showArray, checkPause);
-    else
+        completedSort()
+    } else
         await merge_sort(arr);
+        completedSort();
 }
 
 function myFunction() {
@@ -38,7 +44,7 @@ function myFunction() {
 }
 
 let speed = 0;
-window.onload = function() {
+window.onload = function () {
     let slider = document.getElementById("slider");
 
     speed = 0; //variable to be controlled
@@ -47,40 +53,38 @@ window.onload = function() {
     dispDiv.innerHTML = "" + (100 - speed);
 
     //Real time interval adjustment
-    setInterval(function() {
+    setInterval(function () {
         speed = slider.value;
-      dispDiv.innerHTML = "" + (100 - speed);
+        dispDiv.innerHTML = "" + (100 - speed);
     }, 100)
 
     var idx, foo = document.getElementById('algorithm_select');
-    foo.selectedIndex = (idx = self.name.split('algorithm_selectidx')) ?	idx[1] : 0;
+    foo.selectedIndex = (idx = self.name.split('algorithm_selectidx')) ? idx[1] : 0;
 }
 
-onunload = async function()
-{
+onunload = async function () {
     var foo = document.getElementById('algorithm_select');
     self.name = 'algorithm_selectidx' + foo.selectedIndex;
 }
 
 let isPause = 0;
 
-async function pauseSort(){
+async function pauseSort() {
     isPause = 1;
 }
 
-async function playSort(){
+async function playSort() {
     isPause = 0;
 }
 
-async function checkPause(){
-    while(isPause){
+async function checkPause() {
+    while (isPause) {
         await sleep(speed);
     }
     await sleep(speed);
 }
 
-function showArray(arr)
-{
+function showArray(arr) {
     //initialize canvas
     let fillColor = "#A9A9A9";
     let canvas = document.getElementById("main_canvas");
@@ -92,15 +96,13 @@ function showArray(arr)
     //calculate the width of each bar by dividing the canvas width by the total number of bars that need drawn
     let width = canvas.width / arr.length;
 
-    for (let i = 0; i < arr.length; i++)
-    {
+    for (let i = 0; i < arr.length; i++) {
         //draw a bar for each array element
         drawBar(context, i * width, canvas.height - arr[i], width, arr[i], fillColor);
     }
 }
 
-function drawLine(ctx, startX, startY, endX, endY, color)
-{
+function drawLine(ctx, startX, startY, endX, endY, color) {
     ctx.save();
     ctx.strokeStyle = color;
     ctx.beginPath();
@@ -110,18 +112,16 @@ function drawLine(ctx, startX, startY, endX, endY, color)
     ctx.restore();
 }
 
-function drawBar(ctx, upperLeftCornerX, upperLeftCornerY, width, height, color)
-{
+function drawBar(ctx, upperLeftCornerX, upperLeftCornerY, width, height, color) {
     ctx.save();
     ctx.fillStyle = color;
     ctx.fillRect(upperLeftCornerX, upperLeftCornerY, width, height);
     ctx.restore();
 }
 
-function makeArray(numElements, inputElement)
-{
+function makeArray(numElements, inputElement) {
     let result = [];
-    let scaleFactor = 600/numElements;
+    let scaleFactor = 600 / numElements;
 
     for (let i = 0; i < numElements; i++)
         result.push(i * scaleFactor);
@@ -153,12 +153,11 @@ function shuffle(array) {
     return array;
 }
 
-function getPivotIndex(arr, left, right)
-{
+function getPivotIndex(arr, left, right) {
     if (document.getElementById("pivot_select").value === "Random") {
         //return a random index between left and right
-        var min=left;
-        var max=right-1;
+        var min = left;
+        var max = right - 1;
         return Math.floor(Math.random() * (+max - +min)) + +min;
     } else if (document.getElementById("pivot_select").value === "First") {
         // return the leftmost index provided
@@ -168,7 +167,7 @@ function getPivotIndex(arr, left, right)
         return Math.floor((right + left) / 2);
     } else if (document.getElementById("pivot_select").value === "Last") {
         //return the rightmost index provided
-        return right-1;
+        return right - 1;
     }
 
 }
@@ -213,7 +212,8 @@ async function insertion_sort(arr, drawFunc, waitFunc) {
             drawFunc(arr);
             await waitFunc();
             j--;
-        } 1
+        }
+        1
         arr[j + 1] = temp;
         drawFunc(arr);
         await waitFunc();
@@ -242,6 +242,7 @@ async function selection_sort(arr, drawFunc, waitFunc) {
             await waitFunc();
         }
     }
+
 
     return arr;
 }
@@ -320,6 +321,7 @@ async function heap_sort(arr, drawFunc, waitFunc) {
         await checkPause();
     }
 
+
     return arr;
 }
 
@@ -382,7 +384,7 @@ async function merge_sort(arr) {
                 //showArray(sorted);
                 //await checkPause();
             }
-            if(size > 1) {
+            if (size > 1) {
                 showArray(buffer);
                 await checkPause();
             }
@@ -392,29 +394,26 @@ async function merge_sort(arr) {
             sorted = buffer,
             buffer = temp;
 
-        if(size > 1) {
+        if (size > 1) {
             showArray(sorted);
             await checkPause();
         }
     }
-
-    completedSort()
-
     return arr;
 }
 
 function initView() {
     console.log(localStorage.getItem("type"));
     let selectSort = document.getElementById("algorithm_select");
-    for(let i =0; i< selectSort.length; i++){
-        if(selectSort.options[i].value == localStorage.getItem("type")) {
+    for (let i = 0; i < selectSort.length; i++) {
+        if (selectSort.options[i].value == localStorage.getItem("type")) {
             selectSort.selectedIndex = i;
             break;
         }
     }
 }
 
-function completedSort(){
+function completedSort() {
     let play = document.getElementById("play_btn");
     let pause = document.getElementById("pause_btn");
     play.style.visibility = "hidden";
