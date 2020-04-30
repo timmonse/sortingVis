@@ -61,11 +61,14 @@
             musicElement.addEventListener("click", function () {
                 if(!isPlaying){
                     audio.play()
+                    musicElement.className = "fa fa-volume-off fa-2x musicIcon ";
                     isPlaying = !isPlaying;
                 }
                 else{
                     audio.pause();
                     isPlaying = !isPlaying;
+                    musicElement.className = "fa fa-music fa-2x musicIcon";
+
                 }
             });
 
