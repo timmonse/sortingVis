@@ -61,6 +61,10 @@ window.onload = function () {
 
 }
 
+function refreshPage(){
+    location.reload();
+}
+
 let isPause = 0;
 
 async function pauseSort() {
