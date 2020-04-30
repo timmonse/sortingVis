@@ -90,7 +90,6 @@ var sorts = {
         if(isPlaying){
             audio.play();
             musicElement.className = "fa fa-volume-off fa-2x musicIcon ";
-            localStorage.setItem("music", "true");
         }
 
 
