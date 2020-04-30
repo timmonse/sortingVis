@@ -115,3 +115,9 @@ a {
     filter: drop-shadow(5px 5px 5px #222);
 }
 
+.musicIcon {
+    float: right;
+    margin-right: 10px;
+    border-color: black;
+    cursor: pointer;
+}
