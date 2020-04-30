@@ -409,7 +409,9 @@ function initView() {
             break;
         }
     }
+
 }
+
 
 module.exports.bubble_sort = bubble_sort;
 module.exports.selection_sort = selection_sort;

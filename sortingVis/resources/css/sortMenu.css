@@ -75,6 +75,7 @@
     color: #000000;
     -webkit-transition: color 0.25s 0.0833333333s;
     transition: color 0.25s 0.0833333333s;
+    cursor: pointer;
 
 }
 
@@ -115,3 +116,9 @@ a {
     filter: drop-shadow(5px 5px 5px #222);
 }
 
+.musicIcon {
+    float: right;
+    margin-right: 10px;
+    border-color: black;
+    cursor: pointer;
+}
