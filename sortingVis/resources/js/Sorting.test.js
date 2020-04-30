@@ -18,7 +18,7 @@ describe('Bubble Sort Test', () => {
     });
 });
 
-describe('Inserstion Sort Test', () => {
+describe('Insertion Sort Test', () => {
     const Sorting = require('./Sorting');
     const data = [2,4,7,1,3,0,8,9,6,5];
     const showArray = jest.fn();
