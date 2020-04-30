@@ -34,7 +34,7 @@
                     <div class="grid-item2 grid-normal">
                         <label>Algorithm</label>
                         <br>
-                        <select id="algorithm_select">
+                        <select id="algorithm_select" onchange="options[selectedIndex].value&&self.location.reload(true)">
                             <option value="BubbleSort">Bubble sort</option>
                             <option value="SelectionSort">Selection sort</option>
                             <option value="InsertionSort">Insertion sort</option>

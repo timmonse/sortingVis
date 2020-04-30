@@ -403,6 +403,18 @@ function initView() {
     }
 }
 
+onunload = function()
+{
+    var foo = document.getElementById('foo');
+    self.name = 'fooidx' + foo.selectedIndex;
+}
+
+onload = function()
+{
+    var idx, foo = document.getElementById('foo');
+    foo.selectedIndex = (idx = self.name.split('fooidx')) ?	idx[1] : 0;
+}
+
 module.exports.bubble_sort = bubble_sort;
 module.exports.selection_sort = selection_sort;
 module.exports.insertion_sort = insertion_sort;
