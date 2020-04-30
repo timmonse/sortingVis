@@ -8,6 +8,7 @@ async function runSort() {
     showArray(arr);
 
     //get the algorithm to be used to sort array from user and begin sorting
+    //Runs completedSort upon its completion 
     let whichSort = document.getElementById("algorithm_select").value;
     if (whichSort === "BubbleSort") {
         await bubble_sort(arr, showArray, checkPause);
@@ -20,7 +21,7 @@ async function runSort() {
         completedSort();
     } else if (whichSort === "QuickSort") {
         await quick_sort(arr, 0, size - 1);
-        completedSort();
+        //Runs completed sort within the sort code (because it is recursive, this must be done)
     } else if (whichSort === "HeapSort") {
         await heap_sort(arr, showArray, checkPause);
         completedSort()
@@ -245,6 +246,9 @@ async function selection_sort(arr, drawFunc, waitFunc) {
     return arr;
 }
 
+let pendingRecursive1 = 0;
+let pendingRecursive2 = 0;
+
 //quick sort algorithm
 async function quick_sort(items, left, right) {
 
@@ -255,11 +259,21 @@ async function quick_sort(items, left, right) {
         index = await partition(items, left, right);
 
         if (left < index - 1) {
-            quick_sort(items, left, index - 1);
+            //Increment and decrement a counter to keep track of when recursive calls complete
+            pendingRecursive1++;
+            await quick_sort(items, left, index - 1);
+            --pendingRecursive1;
         }
 
         if (index < right) {
-            quick_sort(items, index, right);
+            //Increment and decrement a counter to keep track of when recursive calls complete
+            pendingRecursive2++;
+            await quick_sort(items, index, right);
+            --pendingRecursive2;
+        }
+        //Only run if all recursive actions are finished
+        if(pendingRecursive1 === 0 && pendingRecursive2 === 0){
+            completedSort();
         }
     }
 
