@@ -409,3 +409,6 @@ module.exports.quick_sort = quick_sort;
 module.exports.heap_sort = heap_sort;
 module.exports.merge_sort = merge_sort;
 module.exports.partition = partition;
+module.exports.heapify = heapify;
+module.exports.showArray = showArray;
+module.exports.checkPause = checkPause;
