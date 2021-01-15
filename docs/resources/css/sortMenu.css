@@ -1,0 +1,124 @@
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*}*/
+/* I dont think this is needed, it messes up the menu bar
+/* If needed, uncomment
+ */
+
+/* Style the navigation bar */
+.navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+    opacity: 0.9;
+}
+
+/* Navbar links */
+.navbar a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: Bahnschrift;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+    background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+    background-color: #af001f;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
+    }
+}
+
+/* Body formatting */
+.body{
+    /* The image used */
+    background-image: url("../images/newTileFour.png");
+}
+
+/*styling for the sorts display*/
+.sort-list-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+
+@media only screen and (max-width: 1000px){
+    .sort-list-display{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* cards styling */
+.card {
+    background-color: #555;
+    padding: 10px;
+    display: inline-block;
+    margin: 10px;
+    box-shadow: inset 0 0 0 4px #000000;
+    color: #000000;
+    -webkit-transition: color 0.25s 0.0833333333s;
+    transition: color 0.25s 0.0833333333s;
+    cursor: pointer;
+
+}
+
+.card-image {
+    width: 100%;
+    height: 300px;
+}
+.card-sort-name-font {
+    margin-top: 5px;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: center;
+}
+
+.card-container {
+    margin: 5px;
+    text-transform: uppercase;
+    font: 700 1.2rem 'Bahnschrift', sans-serif;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    color: #000000;
+    align-content: center;
+    vertical-align: center;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.logo-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+.musicIcon {
+    float: right;
+    margin-right: 10px;
+    border-color: black;
+    cursor: pointer;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link rel="stylesheet" href="resources/css/about.css">
+</head>
+<script src="resources/js/Audio.js"></script>
+
+<body class="body">
+
+    <!-- Load an icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div class="navbar">
+        <a href="mainMenu.html"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a class="active" href="about.html"><i class="fa fa-fw fa-question"></i> About</a>
+        <a href="instructions.html"><i class="fa fa-fw fa-file"></i> Instructions </a>
+    </div>
+
+    <!--        Icon for music-->
+    <i id="musicState" class ="fa fa-music fa-2x musicIcon"></i>
+
+
+    <p><br></p>
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="resources/images/ID.jpg" alt="Ismael" style="width:50%">
+                <div class="container">
+                    <h2>Ismael Duran</h2>
+                    <p class="title">Computer Engineering Senior</p>
+                    <p></p>
+                    <p>iduran@iastate.edu</p>
+                    <p><button id="ismaelContact" onclick="window.location.href = 'mailto:iduran@iastate.edu';" class="button">Contact</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="resources/images/ET.png" alt="Evan" style="width:50%">
+                <div class="container">
+                    <h2>Evan Timmons</h2>
+                    <p class="title">Computer Engineering Senior</p>
+                    <p></p>
+                    <p>timmonse@iastate.edu</p>
+                    <p><button id="evanContact" onclick="window.location.href = 'mailto:timmonse@iastate.edu';" class="button">Contact</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="resources/images/TW.jpg" alt="Ty" style="width:50%">
+                <div class="container">
+                    <h2>Ty Wallis</h2>
+                    <p class="title">Software Engineering Sophomore</p>
+                    <p></p>
+                    <p>tjwallis@iastate.edu</p>
+                    <p><button id="tyContact" onclick="window.location.href = 'mailto:tjwallis@iastate.edu';" class="button">Contact</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="resources/images/SJ.jpg" alt="Sully" style="width:50%">
+                <div class="container">
+                    <h2>Sullivan Jahnke</h2>
+                    <p class="title">Software Engineering Sophomore</p>
+                    <p></p>
+                    <p>sjahnke@iastate.edu</p>
+                    <p><button id="sullyContact" onclick="window.location.href = 'mailto:sjahnke@iastate.edu';" class="button">Contact</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p style="font-family:Bahnschrift;">About Page</p>
+
+    <script>
+        initAudio();
+    </script>
+
+</body>
+</html>

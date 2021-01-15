@@ -1,0 +1,63 @@
+/* Style the navigation bar */
+.navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+    opacity: 0.9;
+}
+
+/* Navbar links */
+.navbar a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: Bahnschrift;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+    background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+    background-color: #af001f;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
+    }
+}
+
+/* Body formatting */
+.body{
+    /* The image used */
+    background-image: url("../images/newTileFour.png");
+}
+
+.Gif {
+    border: 5px solid black;
+    width: 400px;
+    height: 300px;
+}
+
+.image-border {
+    border: 5px solid black;
+}
+
+.font {
+    font: 700 1.2rem 'Bahnschrift', sans-serif;
+}
+
+.musicIcon {
+    float: right;
+    margin-right: 10px;
+    border-color: black;
+    cursor: pointer;
+}

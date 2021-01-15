@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sorts</title>
+    <link rel="stylesheet" href="resources/css/sortMenu.css">
+    <!-- Load an icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="resources/js/sortMenu.js"></script>
+    <script src="resources/js/Audio.js"></script>
+
+
+<body class="body">
+    <div class="navbar">
+        <a href="mainMenu.html"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="about.html"><i class="fa fa-fw fa-question"></i> About</a>
+        <a href="instructions.html"><i class="fa fa-fw fa-file"></i> Instructions </a>
+    </div>
+
+    <i id="musicState" class ="fa fa-music fa-2x musicIcon"></i>
+
+    <a href="mainMenu.html">
+        <img src="resources/images/sortingVis.png" alt="SortingVis Logo" class="logo-center">
+    </a>
+
+     <div class="sort-list-display" id="sorts-display">
+     </div>
+
+    
+    <script>
+        sorts.displaySortCard();
+        initAudio();
+    </script>
+
+</body>
+</html>

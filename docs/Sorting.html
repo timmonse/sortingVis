@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>Sorting Page</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" > This is the one causing problems. If it can be avoided it should be -->
+        <script src="resources/js/Sorting.js"></script>
+        <!-- Load an icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="resources/css/Sorting.css">
+        <script src="resources/js/Audio.js"></script>
+    </head>
+
+
+    <body class="body">
+
+        <div class="navbar">
+            <a href="mainMenu.html"><i class="fa fa-fw fa-home"></i> Home</a>
+            <a href="about.html"><i class="fa fa-fw fa-question"></i> About</a>
+            <a href="instructions.html"><i class="fa fa-fw fa-file"></i> Instructions </a>
+        </div>
+
+<!--        Icon for music-->
+        <i id="musicState" class ="fa fa-music fa-2x musicIcon"></i>
+
+        <br>
+
+
+        <!-- Main grid to load page layout into -->
+        <div class="grid-container">
+            <div class="grid-leftColumn">
+                <div class="grid-container2">
+                    <div class="grid-item1 grid-normal">
+                        <button class="btn draw-border" id="refresh_btn" onclick="refreshPage()">Refresh</button>
+                        <br>
+                        <label>Array Size</label>
+                        <br>
+                        <input id="array_size" type="number" value="100">
+                    </div>
+                    <div class="grid-item2 grid-normal">
+                        <label>Algorithm</label>
+                        <br>
+                        <select id="algorithm_select">
+                            <option value="BubbleSort">Bubble sort</option>
+                            <option value="SelectionSort">Selection sort</option>
+                            <option value="InsertionSort">Insertion sort</option>
+                            <option value="QuickSort">Quicksort</option>
+                            <option value="HeapSort">Heapsort</option>
+                            <option value="MergeSort">Merge sort</option>
+                        </select>
+                    </div>
+                    <div class="grid-item3 grid-normal">
+                        <label>Initial array</label>
+                        <br>
+                        <select id="initial_select">
+                            <option value="Random">Random</option>
+                            <option value="Sorted">Sorted</option>
+                            <option value="Reversed">Reversed</option>
+                        </select>
+                    </div>
+                    <div class="grid-item4 grid-normal">
+                        <label>Pivot choice</label>
+                        <br>
+                        <select id="pivot_select">
+                            <option value="Random">Random</option>
+                            <option value="First">First</option>
+                            <option value="Middle">Middle</option>
+                            <option value="Last">Last</option>
+                        </select>
+                    </div>
+                    <div class="grid-item5 grid-normal">
+                        <p class="speed">Speed:</p>
+                        <div id="dispDiv" style="font-size: 25px"></div>
+                        <br>
+                        <input type='range' min='0' max='99' value='50' id='slider'>
+                        <br>
+                        <br>
+                        <button class="btn draw-border" id="start_btn" onclick="runSort(); myFunction();">START</button>
+                        <br>
+<!--                        <button class="btn draw-border" id="refresh_btn" onclick="refreshPage()">Refresh</button>-->
+                        <br>
+                        <button class="btn draw-border" id="play_btn" onclick="playSort()" style="visibility:hidden;">&#9658</button>
+                        <button class="btn draw-border" id="pause_btn" onclick="pauseSort()" style="visibility:hidden;">| |</button>
+                    </div>
+                    <div class="grid-item6 grid-logo">
+                        <img src="resources/images/sortingVis_thin.png" alt="SortingVis Logo" class="img">
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item2 grid-itemCanvas">
+                <canvas width="800px" height="600px" style="border:1px solid #000000;" id="main_canvas"></canvas>
+            </div>
+        </div>
+
+    <script>
+        initView();
+        initAudio();
+    </script>
+
+    </body>
+</html>

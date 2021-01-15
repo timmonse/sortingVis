@@ -1,0 +1,240 @@
+/* Style the navigation bar */
+.navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+    opacity: 0.9;
+}
+
+/* Navbar links */
+.navbar a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: Bahnschrift;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+    background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+    background-color: #af001f;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
+    }
+}
+
+/* Body formatting (add image) */
+.body{
+    /* The image used */
+    background-image: url("../images/newTileFour.png");
+}
+
+/* Logo centering */
+.logo-center {
+    width: 150px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+/* Menu Grid Template */
+.grid-container {
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: auto auto auto;
+    /*Uncomment for debugging*/
+    /* background-color: #2196F3; */
+    padding: 5px;
+}
+
+/* Menu Grid Typical Item */
+.grid-item {
+    /*Uncomment for debugging*/
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+/* Fancy Main Button Below */
+
+.draw-border {
+    box-shadow: inset 0 0 0 4px #000000;
+    color: #000000;
+    -webkit-transition: color 0.25s 0.0833333333s;
+    transition: color 0.25s 0.0833333333s;
+    position: relative;
+}
+
+.draw-border::before, .draw-border::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.draw-border::before {
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+}
+
+.draw-border::after {
+    border-top-width: 4px;
+    border-right-width: 4px;
+}
+
+.draw-border:hover {
+    color: #af001f;
+}
+
+.draw-border:hover::before, .draw-border:hover::after {
+    border-color: #af001f;
+    -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+    transition: border-color 0s, width 0.25s, height 0.25s;
+    width: 100%;
+    height: 100%;
+}
+
+.draw-border:hover::before {
+    -webkit-transition-delay: 0s, 0s, 0.25s;
+    transition-delay: 0s, 0s, 0.25s;
+}
+
+.draw-border:hover::after {
+    -webkit-transition-delay: 0s, 0.25s, 0s;
+    transition-delay: 0s, 0.25s, 0s;
+}
+
+.btn {
+    background: whitesmoke;
+    opacity: 0.8;
+    border: none;
+    cursor: pointer;
+    line-height: 1.5;
+    font: 700 1.2rem 'Bahnschrift', sans-serif;
+    padding: 1em 2em;
+    letter-spacing: 0.05rem;
+}
+.btn:focus {
+    outline: 2px dotted #4c5052;
+}
+
+/* Fancy Main Button Above */
+
+/* Instructions Button Below */
+
+.button {
+    display: inline-flex;
+    height: 40px;
+    width: 170px;
+    border: 2px solid #000000;
+    /*margin: 20px 20px 20px 20px;*/
+    color: #000000;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font: 700 1.2rem 'Bahnschrift', sans-serif;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+#button-instructions {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: whitesmoke;
+    opacity: 0.8;
+}
+
+#button-instructions {
+    position: relative;
+    transition: all .45s ease-Out;
+}
+
+#underline-instructions {
+    width: 100%;
+    height: 2.5px;
+    margin-top: 15px;
+    align-self: flex-end;
+    left: -200px;
+    background: #af001f;
+    position: absolute;
+    transition: all .3s ease-Out;
+    bottom: 0;
+}
+
+#button-instructions:hover #underline-instructions {
+    left: 0;
+}
+
+/* Instructions Button Above */
+
+/* About Button Below */
+
+#button-about {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: whitesmoke;
+    opacity: 0.8;
+}
+
+#button-about {
+    position: relative;
+    transition: all .45s ease-Out;
+}
+
+#underline-about {
+    width: 100%;
+    height: 2.5px;
+    margin-top: 15px;
+    align-self: flex-end;
+    left: -200px;
+    background: #af001f;
+    position: absolute;
+    transition: all .3s ease-Out;
+    bottom: 0;
+}
+
+#button-about:hover #underline-about {
+    left: 0;
+}
+
+
+.musicIcon {
+    float: right;
+    margin-right: 10px;
+    border-color: black;
+    cursor: pointer;
+}
+
+
+
+
