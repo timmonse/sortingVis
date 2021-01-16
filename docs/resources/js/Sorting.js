@@ -83,6 +83,12 @@ async function checkPause() {
     await sleep(speed);
 }
 
+// Color scale function from vimtaai on github
+function percentageToColor(percentage, maxHue = 275, minHue = 0) {
+  const hue = percentage * (maxHue - minHue) + minHue;
+  return `hsl(${hue}, 100%, 50%)`;
+}
+
 function showArray(arr) {
     //initialize canvas
     let fillColor = "#A9A9A9";
@@ -97,7 +103,7 @@ function showArray(arr) {
 
     for (let i = 0; i < arr.length; i++) {
         //draw a bar for each array element
-        drawBar(context, i * width, canvas.height - arr[i], width, arr[i], fillColor);
+        drawBar(context, i * width, canvas.height - arr[i], width, arr[i], fillColor, canvas.height);
     }
 }
 
@@ -111,9 +117,10 @@ function drawLine(ctx, startX, startY, endX, endY, color) {
     ctx.restore();
 }
 
-function drawBar(ctx, upperLeftCornerX, upperLeftCornerY, width, height, color) {
+function drawBar(ctx, upperLeftCornerX, upperLeftCornerY, width, height, color, canvasHeight) {
     ctx.save();
-    ctx.fillStyle = color;
+    let percent = (height / canvasHeight);
+    ctx.fillStyle = percentageToColor(percent); //perc2color(percent);
     ctx.fillRect(upperLeftCornerX, upperLeftCornerY, width, height);
     ctx.restore();
 }
