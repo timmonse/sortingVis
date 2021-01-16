@@ -268,14 +268,14 @@ async function quick_sort(arr, left, right) {
         if (left < index - 1) {
             //Increment and decrement a counter to keep track of when recursive calls complete
             pendingRecursive1++;
-            await quick_sort(items, left, index - 1);
+            await quick_sort(arr, left, index - 1);
             --pendingRecursive1;
         }
 
         if (index < right) {
             //Increment and decrement a counter to keep track of when recursive calls complete
             pendingRecursive2++;
-            await quick_sort(items, index, right);
+            await quick_sort(arr, index, right);
             --pendingRecursive2;
         }
         //Only run if all recursive actions are finished
