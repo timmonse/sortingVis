@@ -7,7 +7,7 @@ Try it out yourself here: <https://SortingVis.EvanTimmons.com>
 This project was created for COMS 319 at Iowa State University
  
 ## Example Operation
-![Visual Example of Quick Sort Operation](https://s2.gifyu.com/images/QuickSort2.gif)
+![Visual Example of Quick Sort Operation](BubbleSort3.gif)
 
 
 ## Tech/framework used
