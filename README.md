@@ -6,8 +6,9 @@ Try it out yourself here: <https://SortingVis.EvanTimmons.com>
 ## Motivation
 This project was created for COMS 319 at Iowa State University
  
-<!-- TODO ## Screenshots
-Include logo/demo screenshot etc.-->
+## Example Operation
+![Visual Example of Quick Sort Operation](https://s2.gifyu.com/images/QuickSort2.gif)
+
 
 ## Tech/framework used
 <b>Built with</b>
